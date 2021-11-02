@@ -103,7 +103,7 @@ src
       |__ Nav.jsx
       |__ ProductList.jsx
       |__ ProductDetails.jsx
-      |__ Seach.jsx
+      |__ Search.jsx
 
 |__ services/
 
