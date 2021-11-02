@@ -1,4 +1,4 @@
-import from axios from 'axios';
+import axios from 'axios';
 
 const baseUrl = 'http://localhost:3000';
 
