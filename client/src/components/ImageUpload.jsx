@@ -35,7 +35,7 @@ export default function ImageUpload(props) {
     <div className='image-upload'>
       <h4>Upload Image</h4>
       <input className='input-image' type='file' placeholder="Upload an image"
-        onChange={uploadImage} value={formData.img} name="imgURL" />
+        onChange={uploadImage} name="img" />
       <div className='image-section'>
         {loading ? <h3>Loading.......</h3> : null}
         {prevImg === undefined ? <img className='image-act' src={image} width="300" alt='' /> : <img className='image-act' src={prevImg} width="300" alt='user uploaded based on title' />}

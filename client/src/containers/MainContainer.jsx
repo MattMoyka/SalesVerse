@@ -49,7 +49,7 @@ export default function MainContainer(props) {
           <Products products={products} handleProductDelete={handleProductDelete} />
         </Route>
         <Route path='/products/create'>
-          <ProductCreate handleProductCreate={handleProductCreate} />
+          <ProductCreate handleProductCreate={handleProductCreate} currentUser={currentUser} />
         </Route>
       </Switch>
 

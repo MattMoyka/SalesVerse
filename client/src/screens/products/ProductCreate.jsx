@@ -2,21 +2,23 @@ import { useState } from 'react'
 import ImageUpload from '../../components/ImageUpload'
 
 export default function ProductCreate(props) {
+  const { handleProductCreate, currentUser } = props
   const [formData, setFormData] = useState({
     name: '',
     cost: '',
     profit: '',
     description: '',
-    img: ''
+    img: '',
+    user_id: `${currentUser?.id}`,
   })
 
   const { name, cost, profit, description, img } = formData
-  const { handleProductCreate } = props
 
+  console.log(currentUser?.id)
   const handleChange = (e) => {
-    const { value } = e.target;
-    console.log(value)
+    const { name, value } = e.target;
     setFormData({
+      ...formData,
       [name]: value,
     });
   };
@@ -25,13 +27,12 @@ export default function ProductCreate(props) {
     event.preventDefault();
     if (formData.img !== "") {
       const created = await handleProductCreate(formData);
-      setFormData({ created });
     } else {
       alert("Please upload picture")
     }
 
   };
-
+  console.log(formData)
   return (
     <div>
       <h3>Create Item</h3>
@@ -39,24 +40,25 @@ export default function ProductCreate(props) {
         <div>
           <label>
             Name:
-            <input type='text' value={name} onChange={handleChange} />
+            <input type='text' value={name} name='name' onChange={handleChange} />
           </label>
           <label>
             Cost:
-            <input type='integer' value={cost} onChange={handleChange} />
+            <input type='number' value={cost} name='cost' onChange={handleChange} />
           </label>
           <label>
-            Sell Price:
-            <input type='integer' value={profit} onChange={handleChange} />
+            Profit:
+            <input type='number' value={profit} name='profit' onChange={handleChange} />
           </label>
         </div>
         <div>
           <label>
             Description:
-            <textarea type='text' value={description} rows='5' cols='50' onChange={handleChange} />
+            <textarea type='text' value={description} name='description' rows='5' cols='50' onChange={handleChange} />
           </label>
           <ImageUpload formData={formData} setFormData={setFormData} />
         </div>
+        <button>Submit</button>
       </form>
     </div>
   )
