@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { deleteProduct, getAllProducts, postProduct, putProduct } from '../services/products'
 import Products from "../screens/products/Products"
 import ProductCreate from '../screens/products/ProductCreate'
+import ProductDetails from "../screens/products/ProductDetails"
 import Landing from "../screens/Landing"
 
 export default function MainContainer(props) {
@@ -46,10 +47,13 @@ export default function MainContainer(props) {
           <Landing currentUser={currentUser} />
         </Route>
         <Route exact path='/products'>
-          <Products products={products} handleProductDelete={handleProductDelete} />
+          <Products products={products} />
         </Route>
         <Route path='/products/create'>
           <ProductCreate handleProductCreate={handleProductCreate} currentUser={currentUser} />
+        </Route>
+        <Route path='/products/:id'>
+          <ProductDetails products={products} handleProductDelete={handleProductDelete} />
         </Route>
       </Switch>
 
