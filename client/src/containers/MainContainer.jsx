@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router"
+import { Route, Switch, useHistory } from "react-router"
 import { useEffect, useState } from 'react'
 import { deleteProduct, getAllProducts, postProduct, putProduct } from '../services/products'
 import Products from "../screens/products/Products"
