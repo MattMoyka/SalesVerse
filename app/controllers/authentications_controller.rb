@@ -14,7 +14,7 @@ class AuthenticationsController < ApplicationController
       render json: { errors: 'unauthorized' }, status: :unauthorized
     end
   end
-  v
+
   # GET /auth/verify
   def verify
     render json: @current_user.attributes.except('password_digest'), status: :ok

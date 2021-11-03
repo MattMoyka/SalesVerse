@@ -5,10 +5,11 @@ export default function Layouts(props) {
   return (
     <div>
       <header>
-        <h1>SalesVerse</h1>
+        <Link to='/'><h1>SalesVerse</h1></Link>
         {currentUser ? (
           <div>
             <p>{currentUser.username}</p>
+            <button onClick={handleLogout}>Log Out</button>
           </div>
         ) : null}
       </header>

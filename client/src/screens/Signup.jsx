@@ -1,22 +1,26 @@
 import { useState } from 'react'
-const [formData, setFormData] = useState({
-  username: '',
-  email: '',
-  password: '',
-})
+import { Link } from 'react-router-dom'
 
-const { username, email, password } = formData
-const { handleSignup } = props
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData((prevState) => ({
-    ...prevState,
-    [name]: value,
-  }));
-};
+export default function Signup(props) {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  })
 
-export default function Signup() {
+  const { username, email, password } = formData
+  const { handleSignup } = props
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+
   return (
     <form
       onSubmit={(e) => {
@@ -33,6 +37,27 @@ export default function Signup() {
           value={username}
           onChange={handleChange} />
       </label>
+
+      <label>
+        Email:
+        <input
+          type='text'
+          name='email'
+          value={email}
+          onChange={handleChange} />
+      </label>
+
+      <label>
+        Password:
+        <input
+          type='text'
+          name='password'
+          value={password}
+          onChange={handleChange} />
+      </label>
+
+      <button>Sign Up</button>
+      <Link to='/login'>Already have an account?</Link>
     </form>
   )
 }
