@@ -2,7 +2,7 @@ import { Route, Switch, useHistory } from "react-router"
 import { useEffect, useState } from 'react'
 import { deleteProduct, getAllProducts, postProduct, putProduct } from '../services/products'
 import Products from "../screens/products/Products"
-import Layouts from "../layouts/Layouts"
+import ProductCreate from '../screens/products/ProductCreate'
 import Landing from "../screens/Landing"
 
 export default function MainContainer(props) {
@@ -45,8 +45,11 @@ export default function MainContainer(props) {
         <Route exact path='/'>
           <Landing currentUser={currentUser} />
         </Route>
-        <Route path='/products'>
+        <Route exact path='/products'>
           <Products products={products} handleProductDelete={handleProductDelete} />
+        </Route>
+        <Route path='/products/create'>
+          <ProductCreate handleProductCreate={handleProductCreate} />
         </Route>
       </Switch>
 

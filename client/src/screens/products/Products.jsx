@@ -9,6 +9,7 @@ export default function Products(props) {
   return (
     <div>
       <h3>Product List</h3>
+      <Link to='/products/create'>Add Product</Link>
       {products.map((product) => (
         <div key={product.id}>
           <div>{product.name}</div>
