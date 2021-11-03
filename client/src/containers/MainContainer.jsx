@@ -4,6 +4,7 @@ import { deleteProduct, getAllProducts, postProduct, putProduct } from '../servi
 import Products from "../screens/products/Products"
 import ProductCreate from '../screens/products/ProductCreate'
 import ProductDetails from "../screens/products/ProductDetails"
+import ProductEdit from "../screens/products/ProductEdit"
 import Landing from "../screens/Landing"
 
 export default function MainContainer(props) {
@@ -26,7 +27,7 @@ export default function MainContainer(props) {
   }
 
   const handleProductUpdate = async (id, formData) => {
-    const updateProduct = await putProduct(formData)
+    const updateProduct = await putProduct(id, formData)
     setProducts((prevState) =>
       prevState.map((product) => {
         return product.id === Number(id) ? updateProduct : product
@@ -49,11 +50,14 @@ export default function MainContainer(props) {
         <Route exact path='/products'>
           <Products products={products} />
         </Route>
-        <Route path='/products/create'>
+        <Route exact path='/products/create'>
           <ProductCreate handleProductCreate={handleProductCreate} currentUser={currentUser} />
         </Route>
-        <Route path='/products/:id'>
+        <Route exact path='/products/:id'>
           <ProductDetails products={products} handleProductDelete={handleProductDelete} />
+        </Route>
+        <Route path='/products/:id/edit'>
+          <ProductEdit currentUser={currentUser} products={products} handleProductUpdate={handleProductUpdate} />
         </Route>
       </Switch>
 
