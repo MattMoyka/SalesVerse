@@ -51,17 +51,14 @@ function App() {
     <div className="App">
       <Layouts handleLogout={handleLogout} currentUser={currentUser}>
         <Switch>
-          <Route exact path='/'>
-            <Landing currentUser={currentUser} />
+          <Route path='/'>
+            <MainContainer currentUser={currentUser} />
           </Route>
           <Route path='/login'>
             <Login handleLogin={handleLogin} />
           </Route>
           <Route path='/signup'>
             <Signup handleSignup={handleSignup} />
-          </Route>
-          <Route path='/app'>
-            <MainContainer />
           </Route>
         </Switch>
       </Layouts>
