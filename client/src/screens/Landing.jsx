@@ -2,15 +2,23 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function Landing() {
+export default function Landing(props) {
+  const { currentUser } = props
   return (
     <div>
-      hello
 
+      {currentUser ? (
+        <div>
+          Welcome Back
+          <Link to='/app'>Dashboard</Link>
+        </div>
+      ) :
 
-
-      <Link to='/signup'><button>Level Up</button></Link>
-
+        <div>
+          Welcome to the SalesVerse, Are you ready to take you dollar tracking to a whole new level?
+          <Link to='/signup'><button>I'm interested</button></Link>
+        </div>
+      }
     </div>
   )
 }

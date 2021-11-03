@@ -9,9 +9,16 @@ export default function Layouts(props) {
         {currentUser ? (
           <div>
             <p>{currentUser.username}</p>
+            <Link to='/products'>Products</Link>
+            <Link to='/sales'>Sales</Link>
             <button onClick={handleLogout}>Log Out</button>
           </div>
-        ) : null}
+        ) :
+          (<div>
+            <Link to='/login'>Log In</Link>
+            <Link to='/signup'>Sign Up</Link>
+          </div>)
+        }
       </header>
       {children}
     </div>
