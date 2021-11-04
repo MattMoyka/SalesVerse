@@ -72,6 +72,7 @@ export default function MainContainer(props) {
   const handleSaleDelete = async (id) => {
     await deleteSale(id)
     setSales((prevState) => prevState.filter((sale) => sale.id !== id))
+    history.push('/sales')
   }
 
   return (
@@ -94,7 +95,16 @@ export default function MainContainer(props) {
           <ProductEdit currentUser={currentUser} products={products} handleProductUpdate={handleProductUpdate} />
         </Route>
         <Route exact path='/sales'>
-          <Sales sales={sales} />
+          <Sales sales={sales} products={products} />
+        </Route>
+        <Route exact path='/products/:product_id/sales'>
+          <SaleCreate handleSaleCreate={handleSaleCreate} currentUser={currentUser} />
+        </Route>
+        <Route exact path='/sales/:id'>
+          <SaleDetails sales={sales} handleSaleDelete={handleSaleDelete} />
+        </Route>
+        <Route exact path='/sales/:id/edit'>
+          <SaleEdit currentUser={currentUser} sales={sales} handleSaleupdate={handleSaleUpdate} />
         </Route>
       </Switch>
 

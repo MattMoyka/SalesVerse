@@ -38,6 +38,7 @@ export default function ProductDetails(props) {
       </div>
       <Link to={`/products/${id}/edit`}><button>Edit</button></Link>
       <button onClick={() => handleProductDelete(product.id)}>Delete</button>
+      <Link to={`/products/${id}/sales`}><button>Sell</button></Link>
     </div>
   )
 }
