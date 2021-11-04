@@ -62,6 +62,7 @@ export default function MainContainer(props) {
 
   const handleSaleUpdate = async (id, formData) => {
     const updateSale = await putSale(id, formData)
+
     setSales((prevState) =>
       prevState.map((sale) => {
         return sale.id === Number(id) ? updateSale : sale
@@ -104,7 +105,7 @@ export default function MainContainer(props) {
           <SaleDetails sales={sales} handleSaleDelete={handleSaleDelete} />
         </Route>
         <Route exact path='/sales/:id/edit'>
-          <SaleEdit currentUser={currentUser} sales={sales} handleSaleupdate={handleSaleUpdate} />
+          <SaleEdit currentUser={currentUser} handleSaleUpdate={handleSaleUpdate} />
         </Route>
       </Switch>
 
