@@ -9,7 +9,7 @@ export default function Landing(props) {
 
       {currentUser ? (
         <div>
-          Welcome Back
+
           <Link to='/app'>Dashboard</Link>
         </div>
       ) :

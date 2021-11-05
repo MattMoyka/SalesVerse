@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ImageUpload from '../../components/ImageUpload'
 
 export default function ProductCreate(props) {
-  const { handleProductCreate, currentUser } = props
+  const { handleProductCreate, currentUser, setToggle } = props
   const [formData, setFormData] = useState({
     name: '',
     cost: '',
@@ -27,6 +27,7 @@ export default function ProductCreate(props) {
     event.preventDefault();
     if (formData.img !== "") {
       const created = await handleProductCreate(formData);
+      setToggle(prevState => !prevState)
     } else {
       alert("Please upload picture")
     }

@@ -4,7 +4,7 @@ import { getOneSale } from '../../services/sales'
 import { dateformat } from '../../utils/dateformat'
 
 export default function SaleEdit(props) {
-  const { handleSaleUpdate, currentUser } = props
+  const { handleSaleUpdate, currentUser, setToggle1 } = props
   const { id } = useParams()
 
   const [formData, setFormData] = useState({
@@ -54,6 +54,7 @@ export default function SaleEdit(props) {
     event.preventDefault();
     console.log(id)
     console.log(formData)
+    setToggle1(prevState => !prevState)
     handleSaleUpdate(id, formData);
   };
 

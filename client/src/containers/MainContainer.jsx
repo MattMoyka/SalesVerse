@@ -17,6 +17,8 @@ export default function MainContainer(props) {
   const [products, setProducts] = useState([])
   const [sales, setSales] = useState([])
   const history = useHistory()
+  const [toggle, setToggle] = useState(false)
+  const [toggle1, setToggle1] = useState(false)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -24,7 +26,7 @@ export default function MainContainer(props) {
       setProducts(productlist)
     }
     fetchProducts()
-  }, [])
+  }, [toggle])
 
   const handleProductCreate = async (formData) => {
     const newProduct = await postProduct(formData)
@@ -52,7 +54,7 @@ export default function MainContainer(props) {
       setSales(salelist)
     }
     fetchSales()
-  }, [])
+  }, [toggle1])
 
   const handleSaleCreate = async (formData) => {
     const newSale = await postSale(formData)
@@ -87,7 +89,7 @@ export default function MainContainer(props) {
           <Products products={products} />
         </Route>
         <Route exact path='/products/create'>
-          <ProductCreate handleProductCreate={handleProductCreate} currentUser={currentUser} />
+          <ProductCreate handleProductCreate={handleProductCreate} currentUser={currentUser} setToggle={setToggle} />
         </Route>
         <Route exact path='/products/:id'>
           <ProductDetails products={products} handleProductDelete={handleProductDelete} />
@@ -105,7 +107,7 @@ export default function MainContainer(props) {
           <SaleDetails sales={sales} handleSaleDelete={handleSaleDelete} />
         </Route>
         <Route exact path='/sales/:id/edit'>
-          <SaleEdit currentUser={currentUser} handleSaleUpdate={handleSaleUpdate} />
+          <SaleEdit currentUser={currentUser} handleSaleUpdate={handleSaleUpdate} setToggle1={setToggle1} />
         </Route>
       </Switch>
 

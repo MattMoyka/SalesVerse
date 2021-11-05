@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import './screen.css'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export default function Signup(props) {
   const [formData, setFormData] = useState({
@@ -22,42 +24,50 @@ export default function Signup(props) {
 
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        handleSignup(formData)
-      }} >
+    <div className='login-page'>
+      <form
+        className="login-form"
+        onSubmit={(e) => {
+          e.preventDefault()
+          handleSignup(formData)
+        }} >
 
-      <h3> Sign Up</h3>
-      <label>
-        Username:
-        <input
+        <h3> Sign Up</h3>
+
+        <TextField
+          id="outlined-basic"
+          label="Username"
+          variant="filled"
           type='text'
           name='username'
           value={username}
           onChange={handleChange} />
-      </label>
 
-      <label>
-        Email:
-        <input
+
+
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="filled"
           type='text'
           name='email'
           value={email}
           onChange={handleChange} />
-      </label>
 
-      <label>
-        Password:
-        <input
+
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="filled"
           type='text'
           name='password'
           value={password}
           onChange={handleChange} />
-      </label>
 
-      <button>Sign Up</button>
-      <Link to='/login'>Already have an account?</Link>
-    </form>
+
+        <button id='login-button' variant="contained" color="success">Sign Up</button>
+        <Link to='/login' id='login-bottomtext'>Already have an account?</Link>
+      </form>
+    </div >
   )
 }

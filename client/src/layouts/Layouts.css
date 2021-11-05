@@ -1,0 +1,24 @@
+
+.header{
+  display: flex;
+  justify-content: space-around;
+  background: black
+}
+
+.header-title{
+text-decoration: none;
+color: white
+}
+
+.header-text{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50vw;
+  color: white
+}
+
+#nodec{
+  text-decoration: none;
+  color: white
+}
