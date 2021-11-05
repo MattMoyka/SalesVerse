@@ -59,42 +59,50 @@ export default function SaleEdit(props) {
   };
 
   return (
-    <div>
-      <div>
-        <h3>Edit Sale</h3>
-        <form onSubmit={handleSubmit}>
-          <img src={saleData.product?.img} />
-          <div>
+
+    <div className='saleedit-form'>
+      <h3>Edit Sale</h3>
+      <form onSubmit={handleSubmit}>
+        <div className='form'>
+
+          <div className='saleedit-form-left'>
             <label>
               Name:
-              <div>{saleData.product?.name}</div>
             </label>
+            <div id='saleedit-form-disp'>{saleData.product?.name}</div>
+
             <label>
               Cost:
-              <div>{saleData.product?.cost}</div>
             </label>
+            <div id='saleedit-form-disp'>${saleData.product?.cost}</div>
+
             <label>
               Profit:
-              <div>{saleData.product?.profit}</div>
             </label>
+            <div id='saleedit-form-disp'>${saleData.product?.profit}</div>
+            <label>
+              Buyer:
+            </label>
+            <input type='text' value={buyer} name='buyer' onChange={handleChange} />
+            <label>
+              Date:
+            </label>
+            <input type='string' value={sold_date} name='sold_date' onChange={handleChange} />
+
           </div>
-          <div>
+          <div className='saleedit-form-right'>
             <label>
               Description:
-              <div>{saleData.product?.description}</div>
             </label>
+            <div id='saleedit-form-disp'>{saleData.product?.description}</div>
+            <img width='150' src={saleData.product?.img} />
+
           </div>
-          <label>
-            Buyer:
-            <input type='text' value={buyer} name='buyer' onChange={handleChange} />
-          </label>
-          <label>
-            Date:
-            <input type='string' value={sold_date} name='sold_date' onChange={handleChange} />
-          </label>
-          <button>Submit</button>
-        </form>
-      </div>
+
+        </div>
+        <button className='saleedit-button'>Submit</button>
+      </form>
     </div>
+
   )
 }

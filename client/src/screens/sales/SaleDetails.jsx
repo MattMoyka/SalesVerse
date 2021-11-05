@@ -19,12 +19,12 @@ export default function SaleDetails(props) {
   console.log(sale)
 
   return (
-    <div>
+    <div className='saledetails-page'>
       <h3>Sale Details</h3>
 
-      <div>
-        <img src={sale.product?.img} />
-        <div>
+      <div className='saledetails-img-info'>
+        <img src={sale.product?.img} id='saledetails-img' />
+        <div className='saledetails-info'>
           <div>Product:{sale.product?.name}</div>
           <div></div>
           <div>Total: {sale.product?.cost + sale.product?.profit}</div>
@@ -34,11 +34,13 @@ export default function SaleDetails(props) {
           <div>Updated: {sale.product?.updated_at}</div>
         </div>
       </div>
-      <div>
+      <div className='saledetails-desc'>
         <div>Description: {sale.product?.description}</div>
       </div>
-      <Link to={`/sales/${id}/edit`}><button>Edit</button></Link>
-      <button onClick={() => handleSaleDelete(sale?.id)}>Delete</button>
+      <div className='saledetails-buttons'>
+        <Link to={`/sales/${id}/edit`}><button>Edit</button></Link>
+        <button onClick={() => handleSaleDelete(sale?.id)}>Delete</button>
+      </div>
     </div>
   )
 }

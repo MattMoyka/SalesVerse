@@ -19,12 +19,12 @@ export default function ProductDetails(props) {
 
 
   return (
-    <div>
+    <div className='proddetails-page'>
       <h3>Product Details</h3>
 
-      <div>
-        <img src={product.img} />
-        <div>
+      <div className='proddetails-img-info'>
+        <img src={product.img} id='proddetails-img' />
+        <div className='proddetails-info'>
           <div>Product:{product.name}</div>
           <div>Total: {product.cost + product.profit}</div>
           <div>Cost: {product.cost}</div>
@@ -33,12 +33,14 @@ export default function ProductDetails(props) {
           <div>Updated: {product.updated_at}</div>
         </div>
       </div>
-      <div>
+      <div className='proddetails-desc'>
         <div>Description: {product.description}</div>
       </div>
-      <Link to={`/products/${id}/edit`}><button>Edit</button></Link>
-      <button onClick={() => handleProductDelete(product.id)}>Delete</button>
-      <Link to={`/products/${id}/sales`}><button>Sell</button></Link>
+      <div className='proddetails-buttons'>
+        <Link to={`/products/${id}/edit`}><button>Edit</button></Link>
+        <Link to={`/products/${id}/sales`}><button>Sell</button></Link>
+        <button onClick={() => handleProductDelete(product.id)}>Delete</button>
+      </div>
     </div>
   )
 }

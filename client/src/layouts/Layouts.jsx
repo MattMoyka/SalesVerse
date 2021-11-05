@@ -1,10 +1,24 @@
-import { Link } from 'react-router-dom';
+import { Link, Switch, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './Layouts.css'
 
 export default function Layouts(props) {
   const { children, currentUser, handleLogout } = props;
+  const location = useLocation()
+  const [loc, setLoc] = useState(true)
+
+
+  useEffect(() => {
+    const fetchLocation = (location) => {
+      setLoc(location.pathname === '/')
+    }
+    fetchLocation(location)
+  }, [])
+
+
   return (
-    <div>
+
+    <div >
       <header className='header'>
         <Link to='/'><h1 className='header-title' id='nodec'>SalesVerse</h1></Link>
         {currentUser ? (
@@ -22,6 +36,11 @@ export default function Layouts(props) {
         }
       </header>
       {children}
-    </div>
+    </div >
   )
+
+
+
+
+
 }

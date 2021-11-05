@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getOneProduct } from '../../services/products'
-
+import './Sales.css'
 export default function SaleCreate(props) {
   const { handleSaleCreate, currentUser } = props
   const { product_id } = useParams()
@@ -55,41 +55,50 @@ export default function SaleCreate(props) {
   };
 
   return (
-    <div>
-      <div>
-        <h3>Sell Item</h3>
-        <form onSubmit={handleSubmit}>
-          <div>
+
+    <div className='salecreate-form'>
+      <h3>Sell Item</h3>
+      <form onSubmit={handleSubmit}>
+        <div className='form'>
+          <div className='salecreate-form-left'>
             <label>
               Name:
-              <div>{name}</div>
             </label>
+            <div id='salecreate-form-disp'>{name}</div>
+
             <label>
               Cost:
-              <div>{cost}</div>
             </label>
+            <div id='salecreate-form-disp'>{cost}</div>
+
             <label>
               Profit:
-              <div>{profit}</div>
             </label>
+            <div id='salecreate-form-disp'>{profit}</div>
+            <label>
+              Buyer:
+            </label>
+            <input type='text' value={buyer} name='buyer' onChange={handleChange} />
+            <label>
+              Date:
+            </label>
+            <input type='date' value={sold_date} name='sold_date' onChange={handleChange} />
+
           </div>
-          <div>
+
+
+          <div className='salecreate-form-right'>
             <label>
               Description:
-              <div>{description}</div>
             </label>
+            <div id='salecreate-form-disp'>{description}</div>
+            <img width='150' src={img} />
           </div>
-          <label>
-            Buyer:
-            <input type='text' value={buyer} name='buyer' onChange={handleChange} />
-          </label>
-          <label>
-            Date:
-            <input type='date' value={sold_date} name='sold_date' onChange={handleChange} />
-          </label>
-          <button>Submit</button>
-        </form>
-      </div>
+        </div>
+        <button className='salecreate-button'>Submit</button>
+
+      </form>
     </div>
+
   )
 }

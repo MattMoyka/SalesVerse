@@ -2,7 +2,7 @@ body{
   background-color: #0e0e0e;
 }
 
-.product-list-header{
+.sale-list-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,17 +14,17 @@ color: white;
 
 }
 
-.product-list-title{
+.sale-list-title{
   font-size:x-large;
   font-weight: bolder;
 }
 
-.product-containers{
+.sale-containers{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
   padding: 15px;
-  border: 1px solid #42e4cd;
+  border: 1px solid #ffdd29;
   margin: 10px 5px 5px auto;
   width: 70vw;
   color: white;
@@ -33,7 +33,7 @@ color: white;
 }
 
 
-.product-containers-title{
+.sale-containers-title{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   padding: 15px;
@@ -46,17 +46,17 @@ color: white;
   background-color: #0e0e0e;
 }
 
-.product-list-container{
+.sale-list-container{
   margin-top: 10px;
 }
 
-#product-link{
+#sale-link{
   text-decoration: none;
   color: white;
 }
 
 /* ============================================================== */
-/* Product Edit css */
+/* Sale Edit css */
 .form{
   display:flex;
   flex-direction: row;
@@ -64,31 +64,42 @@ color: white;
   gap:20px;
 }
 
-.prodedit-form{
+.saleedit-form{
   width: 60vw;
   margin: 0 auto;
   padding: 15px;
-  border: 2px solid #42E4CD;
-  background-image: linear-gradient(to top right, transparent, #42E4CD);
+  border: 2px solid #ffdd29;
+  background-image: linear-gradient(to top right, transparent, #ffdd29);
   position: absolute;
   right: 30px;
   top: 100px;
 }
 
-.prodedit-form-left, .prodedit-form-right{
+.saleedit-form-left, .saleedit-form-right{
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   text-align: left;
   width: 40%;
 
 }
 
+#saleedit-form-disp{
+  width: 200px;
+height: auto;
+padding: 5px;
+background: #C4C4C4;
+}
+
+.saleedit-button{
+  margin: 10px;
+}
+
 /* ============================================================== */
-/* Product Details css */
+/* Sales Details css */
 
 
-.proddetails-page{
+.saledetails-page{
   display: flex;
   flex-direction: column;
   color: white;
@@ -96,32 +107,73 @@ color: white;
   right: 20px;
   top: 120px;
   width: 65vw;
-  border: 2px solid #42E4CD;
-  background-image: linear-gradient(to top right, transparent, #42E4CD);
+  border: 2px solid #ffdd29;
+  background-image: linear-gradient(to top right, transparent, #ffdd29);
   padding: 20px;
 
 }
 
-.proddetails-img-info{
+.saledetails-img-info{
   display: flex;
   justify-content: center;
   gap: 50px;
 }
 
-.proddetails-buttons{
+.saledetails-buttons{
   display: flex;
   justify-content: space-evenly;
 }
 
-.proddetails-info{
+.saledetails-info{
   text-align: left;
   line-height: 25px;
 }
 
-.proddetails-desc{
+.saledetails-desc{
   margin: 20px auto;
 }
 
-#proddetails-img{
+#saledetails-img{
   height: 150px;
+}
+
+
+/* ============================================================== */
+/* Sale create css */
+.form{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:20px;
+}
+
+.salecreate-form{
+  width: 60vw;
+  margin: 0 auto;
+  padding: 15px;
+  border: 2px solid #ffdd29;
+  background-image: linear-gradient(to top right, transparent, #ffdd29);
+  position: absolute;
+  right: 30px;
+  top: 100px;
+}
+
+.salecreate-form-left, .salecreate-form-right{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  width: 40%;
+
+}
+
+#salecreate-form-disp{
+  width: 200px;
+height: auto;
+padding: 5px;
+background: #C4C4C4;
+}
+
+.salecreate-button{
+  margin: 10px;
 }

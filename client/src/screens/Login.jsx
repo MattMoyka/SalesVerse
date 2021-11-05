@@ -6,8 +6,8 @@ import TextField from '@mui/material/TextField';
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
-    username: '',
-    password: '',
+    username: 'mattt',
+    password: '123456',
   });
   const { username, password } = formData;
   const { handleLogin } = props;
@@ -38,6 +38,7 @@ export default function Login(props) {
           variant="filled"
           type='text'
           name='username'
+
           value={username}
           onChange={handleChange}
         />
@@ -55,7 +56,7 @@ export default function Login(props) {
         />
 
 
-        <Button id='login-button' variant="contained" color="success">Log In</Button>
+        <button id='login-button' >Log In</button>
         <Link to='/signup' id='login-bottomtext'>Don't have an account?</Link>
 
       </form>

@@ -9,7 +9,7 @@ export default function Products(props) {
   return (
     <div className="product-page">
       <div className="product-list-header">
-        <h3>Product List</h3>
+        <h3 className='product-list-title'>Product List</h3>
         <Link to='/products/create' id='product-link'>Add Product</Link>
       </div>
       <div className='product-containers-title'>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ImageUpload from '../../components/ImageUpload'
 import { getOneProduct } from "../../services/products"
-
+import './products.css'
 
 export default function ProductEdit(props) {
   const { handleProductUpdate, currentUser, products } = props
@@ -53,29 +53,35 @@ export default function ProductEdit(props) {
   };
   console.log(formData)
   return (
-    <div>
+    <div className='prodedit-form'>
       <h3>Edit Item</h3>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Name:
+      <form onSubmit={handleSubmit} >
+        <div className='form'>
+          <div className='prodedit-form-left'>
+            <label>
+              Name:
+            </label>
             <input type='text' value={name} name='name' onChange={handleChange} />
-          </label>
-          <label>
-            Cost:
+
+            <label>
+              Cost:
+            </label>
             <input type='number' value={cost} name='cost' onChange={handleChange} />
-          </label>
-          <label>
-            Profit:
+
+            <label>
+              Profit:
+            </label>
             <input type='number' value={profit} name='profit' onChange={handleChange} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Description:
+
+          </div>
+          <div className='prodedit-form-right'>
+            <label>
+              Description:
+            </label>
             <textarea type='text' value={description} name='description' rows='5' cols='50' onChange={handleChange} />
-          </label>
-          <ImageUpload formData={formData} setFormData={setFormData} />
+
+            <ImageUpload formData={formData} setFormData={setFormData} />
+          </div>
         </div>
         <button>Submit</button>
       </form>
