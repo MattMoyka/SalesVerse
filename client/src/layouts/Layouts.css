@@ -2,7 +2,8 @@
 .header{
   display: flex;
   justify-content: space-around;
-  background: black
+  background: black;
+  box-shadow: 5px 5px 5px white;
 }
 
 .header-title{

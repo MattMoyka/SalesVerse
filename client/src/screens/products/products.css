@@ -1,15 +1,51 @@
+body{
+  background-color: #0e0e0e;
+}
+
 .product-list-header{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+width: 35vw;
+position: absolute;
+right:50px;
+top:85px;
+color: white;
 
 }
 
 .product-containers{
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
   padding: 15px;
-  border: 3px solid #42e4cd;
-  margin: 5px 5px 5px auto;
+  border: 1px solid #42e4cd;
+  margin: 10px 5px 5px auto;
   width: 70vw;
+  color: white;
+  text-decoration: none;
+  background-color: #0e0e0e;
+}
+
+
+.product-containers-title{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 15px;
+ text-align: center;
+  margin: 60px 5px 5px auto;
+  width: 70vw;
+  color: white;
+  position: sticky;
+  top: 0px;
+  background-color: #0e0e0e;
+}
+
+.product-list-container{
+  margin-top: 10px;
+}
+
+#product-link{
+  text-decoration: none;
+  color: white;
 }
