@@ -21,5 +21,53 @@ color: white
 
 #nodec{
   text-decoration: none;
-  color: white
+  color: white;
 }
+
+
+  /* ================================= */
+/* NavInfo */
+
+.navinfo-text{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  color: white;
+  
+}
+
+.navinfo-text-signedout{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: start;
+  color: white;
+  gap: 50px;
+  
+}
+
+.navinfo-subtext{
+  display: flex;
+  flex-direction: column;
+gap: 35px;
+  justify-content: space-around;
+  color: white;
+}
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  
+  color: white;
+  width: 20vw;
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom:0;
+}
+
+#logout-button{
+  margin: 20px;
+}
+

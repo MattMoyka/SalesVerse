@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 
 
@@ -10,7 +10,7 @@ export default function Landing(props) {
       {currentUser ? (
         <div>
 
-          <Link to='/app'>Dashboard</Link>
+          <Redirect to='/products' />
         </div>
       ) :
 
