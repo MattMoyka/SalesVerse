@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getOneSale } from '../../services/sales'
 import { dateformat } from '../../utils/dateformat'
+import { DateTime } from "luxon";
+
 
 export default function SaleEdit(props) {
   const { handleSaleUpdate, currentUser, setToggle1 } = props
@@ -17,14 +19,15 @@ export default function SaleEdit(props) {
 
   const [saleData, setSaleData] = useState([])
   const { sold_date, buyer } = formData
-
-
+  console.log(DateTime.fromISO(sold_date))
 
 
   // useEffect(() => {
   //   const i = dateformat(saleData?.sold_date)
-  //   setSold(i)
+  //   console.log(i)
   // }, [saleData?.sold_date])
+
+
 
   useEffect(() => {
     const fetchSaleItem = async () => {
@@ -46,6 +49,7 @@ export default function SaleEdit(props) {
     const { name, value } = e.target;
     setFormData({
       ...formData,
+      user_id: currentUser?.id,
       [name]: value,
     });
   };
@@ -87,7 +91,7 @@ export default function SaleEdit(props) {
             <label>
               Date:
             </label>
-            <input type='string' value={sold_date} name='sold_date' onChange={handleChange} />
+            <input type='date' value={sold_date} name='sold_date' onChange={handleChange} />
 
           </div>
           <div className='saleedit-form-right'>

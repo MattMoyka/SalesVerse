@@ -46,6 +46,7 @@ export default function MainContainer(props) {
   const handleProductDelete = async (id) => {
     await deleteProduct(id)
     setProducts((prevState) => prevState.filter((product) => product.id !== id))
+    history.push('/products')
   }
 
   useEffect(() => {

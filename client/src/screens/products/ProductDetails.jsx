@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { getOneProduct } from "../../services/products"
+import { DateTime } from "luxon"
 
 export default function ProductDetails(props) {
   const { products, handleProductDelete } = props
@@ -30,7 +31,8 @@ export default function ProductDetails(props) {
           <div>Cost: {product.cost}</div>
           <div>Profit: {product.profit}</div>
           <div>Margin: {Math.round(product.profit / (product.cost + product.profit) * 100)}%</div>
-          <div>Updated: {product.updated_at}</div>
+          {/* <div>Updated: {DateTime.fromISO(product?.updated_at).c?.month}/{DateTime.fromISO(product?.updated_at).c?.day}/{DateTime.fromISO(product?.updated_at).c?.year}</div> */}
+          <div>Updated: {DateTime.fromISO(product?.updated_at).toFormat('D')}</div>
         </div>
       </div>
       <div className='proddetails-desc'>

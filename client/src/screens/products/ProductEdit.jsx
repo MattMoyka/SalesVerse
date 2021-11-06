@@ -17,7 +17,7 @@ export default function ProductEdit(props) {
     img: '',
     user_id: `${currentUser?.id}`,
   })
-
+  console.log(currentUser?.id)
   const { name, cost, profit, description, img } = formData
 
   useEffect(() => {
@@ -29,23 +29,24 @@ export default function ProductEdit(props) {
         profit: productData?.profit,
         description: productData?.description,
         img: productData?.img,
-        user_id: `${currentUser?.id}`,
+        user_id: currentUser?.id,
       });
     };
     fetchProductItem();
   }, [id]);
-
-
-
   console.log(currentUser?.id)
+
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
+      user_id: currentUser?.id,
       [name]: value,
     });
   };
-  console.log(id)
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     handleProductUpdate(id, formData);
@@ -80,7 +81,7 @@ export default function ProductEdit(props) {
             </label>
             <textarea type='text' value={description} name='description' rows='5' cols='50' onChange={handleChange} />
 
-            <ImageUpload formData={formData} setFormData={setFormData} />
+            <ImageUpload formData={formData} setFormData={setFormData} prevImg={formData?.img} />
           </div>
         </div>
         <button>Submit</button>

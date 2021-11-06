@@ -45,6 +45,7 @@ export default function SaleCreate(props) {
     const { name, value } = e.target;
     setFormData({
       ...formData,
+      user_id: currentUser?.id,
       [name]: value,
     });
   };

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import './Image.css'
 
 export default function ImageUpload(props) {
   const [loading, setLoading] = useState(false)
@@ -27,18 +27,21 @@ export default function ImageUpload(props) {
       [name]: file?.secure_url,
     })
     setLoading(false)
-
   }
 
-
+  console.log(prevImg)
   return (
     <div className='image-upload'>
-      <h4>Upload Image</h4>
-      <input className='input-image' type='file' placeholder="Upload an image"
-        onChange={uploadImage} name="img" />
+      <div className='image-or'>
+        <label className='custom-upload'>
+          Upload Image
+          <input className='input-image' type='file'
+            onChange={uploadImage} name="img" />
+        </label>
+      </div>
       <div className='image-section'>
         {loading ? <h3>Loading.......</h3> : null}
-        {prevImg === undefined ? <img className='image-act' src={image} width="300" alt='' /> : <img className='image-act' src={prevImg} width="300" alt='user uploaded based on title' />}
+        {prevImg === undefined ? <img className='image-act' src={image} width="200" alt='' /> : <img className='image-act' src={prevImg} width="200" alt='user uploaded based on title' />}
       </div>
     </div>
   )

@@ -19,6 +19,7 @@ export default function ProductCreate(props) {
     const { name, value } = e.target;
     setFormData({
       ...formData,
+      user_id: currentUser?.id,
       [name]: value,
     });
   };
@@ -35,31 +36,37 @@ export default function ProductCreate(props) {
   };
   console.log(formData)
   return (
-    <div>
+    <div className='prodcreate-form'>
       <h3>Create Item</h3>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Name:
+        <div className='form'>
+          <div className='prodcreate-form-left'>
+            <label>
+              Name:
+            </label>
             <input type='text' value={name} name='name' onChange={handleChange} />
-          </label>
-          <label>
-            Cost:
+
+            <label>
+              Cost:
+            </label>
             <input type='number' value={cost} name='cost' onChange={handleChange} />
-          </label>
-          <label>
-            Profit:
+
+            <label>
+              Profit:
+            </label>
             <input type='number' value={profit} name='profit' onChange={handleChange} />
-          </label>
+
+          </div>
+          <div className='prodcreate-form-right'>
+            <label>
+              Description:
+            </label>
+            <textarea type='text' value={description} name='description' onChange={handleChange} />
+
+            <ImageUpload formData={formData} setFormData={setFormData} />
+          </div>
         </div>
-        <div>
-          <label>
-            Description:
-            <textarea type='text' value={description} name='description' rows='5' cols='50' onChange={handleChange} />
-          </label>
-          <ImageUpload formData={formData} setFormData={setFormData} />
-        </div>
-        <button>Submit</button>
+        <button className='prodcreate-button'>Submit</button>
       </form>
     </div>
   )

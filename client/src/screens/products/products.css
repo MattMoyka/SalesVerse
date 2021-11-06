@@ -126,3 +126,43 @@ background-image: linear-gradient(to top right, transparent, rgba(66, 228, 205, 
 #proddetails-img{
   height: 150px;
 }
+
+/* ============================================================== */
+/* Produt create css */
+.form{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:20px;
+}
+
+.prodcreate-form{
+  width: 60vw;
+  margin: 0 auto;
+  padding: 15px;
+  border: 2px solid #42E4CD;
+  background-image: linear-gradient(to top right, transparent, #42E4CD);
+  position: absolute;
+  right: 30px;
+  top: 100px;
+}
+
+.prodcreate-form-left, .prodcreate-form-right{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  width: 40%;
+
+}
+
+#prodcreate-form-disp{
+  width: 200px;
+height: auto;
+padding: 5px;
+background: #C4C4C4;
+}
+
+.prodcreate-button{
+  margin: 10px;
+}
