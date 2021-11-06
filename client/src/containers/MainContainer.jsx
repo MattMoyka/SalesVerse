@@ -20,6 +20,9 @@ export default function MainContainer(props) {
   const [toggle, setToggle] = useState(false)
   const [toggle1, setToggle1] = useState(false)
 
+
+
+
   useEffect(() => {
     const fetchProducts = async () => {
       const productlist = await getAllProducts()

@@ -86,6 +86,13 @@ color: white;
 
 #saleedit-form-disp{
   width: 200px;
+height: 20px;
+padding: 5px;
+background: #C4C4C4;
+}
+
+#saleedit-form-disp-desc{
+  width: 200px;
 height: auto;
 padding: 5px;
 background: #C4C4C4;
@@ -93,6 +100,11 @@ background: #C4C4C4;
 
 .saleedit-button{
   margin: 10px;
+}
+
+.sale-edit-input{
+  width: 200px;
+  height: 20px;
 }
 
 /* ============================================================== */
@@ -121,7 +133,8 @@ background: #C4C4C4;
 
 .saledetails-buttons{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap:30px;
 }
 
 .saledetails-info{
@@ -137,7 +150,27 @@ background: #C4C4C4;
   height: 150px;
 }
 
+#sale-detail-name{
+  font-size: 1.5rem;
+}
 
+#sale-detail-total{
+  font-size: 1.25rem;
+}
+
+#sale-details-cp{
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+}
+
+#sale-detail-desc-form{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 15px;
+  text-align: left;
+}
 /* ============================================================== */
 /* Sale create css */
 .form{

@@ -87,24 +87,24 @@ export default function SaleEdit(props) {
             <label>
               Buyer:
             </label>
-            <input type='text' value={buyer} name='buyer' onChange={handleChange} />
+            <input className='sale-edit-input' type='text' value={buyer} name='buyer' onChange={handleChange} />
             <label>
               Date:
             </label>
-            <input type='date' value={sold_date} name='sold_date' onChange={handleChange} />
+            <input className='sale-edit-input' type='date' value={sold_date} name='sold_date' onChange={handleChange} />
 
           </div>
           <div className='saleedit-form-right'>
             <label>
               Description:
             </label>
-            <div id='saleedit-form-disp'>{saleData.product?.description}</div>
+            <div id='saleedit-form-disp-desc'>{saleData.product?.description}</div>
             <img width='150' src={saleData.product?.img} />
-
+            <button className='saleedit-button'>Submit</button>
           </div>
 
         </div>
-        <button className='saleedit-button'>Submit</button>
+
       </form>
     </div>
 

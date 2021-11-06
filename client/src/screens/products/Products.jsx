@@ -10,7 +10,7 @@ export default function Products(props) {
   const { products } = props
   const [applySort, setApplySort] = useState(false);
   const [sortType, setSortType] = useState("name-ascending");
-  const [searchResult, setSearchResult] = useState(products);
+  const [searchResult, setSearchResult] = useState([]);
 
   const handleSort = (type) => {
     if (type !== "" && type !== undefined) {
@@ -45,18 +45,16 @@ export default function Products(props) {
     setApplySort(false);
   }
 
-  useEffect(() => {
-    setSearchResult(products)
-  }, [])
+
 
   const handleSearch = (event) => {
     let results;
-    if (event.target.value !== "") {
+    if (event.target.value !== []) {
       results = products.filter((product) =>
         product.name.toLowerCase().includes(event.target.value.toLowerCase())
       );
     } else {
-      results = products
+      results = [...products]
     }
     setSearchResult(results);
     setApplySort(true);

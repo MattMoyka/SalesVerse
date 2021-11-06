@@ -1,14 +1,70 @@
 import { Link } from "react-router-dom"
 import './Sales.css'
+import { useState, useEffect } from "react"
+import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sortsale"
+import Search from "../../components/Search"
+import Sort from "../../components/Sort"
 
 export default function Sales(props) {
   const { sales, products } = props
   console.log(sales)
+
+  const [applySort, setApplySort] = useState(false);
+  const [sortType, setSortType] = useState("name-ascending");
+  const [searchResult, setSearchResult] = useState([]);
+
+  const handleSort = (type) => {
+    if (type !== "" && type !== undefined) {
+      setSortType(type);
+    }
+    switch (type) {
+      case "buyer-ascending":
+        setSearchResult(AZ(searchResult));
+        break;
+      case "buyer-descending":
+        setSearchResult(ZA(searchResult));
+        break;
+      case "price-ascending":
+        setSearchResult(lowestFirst(searchResult));
+        break;
+      case "price-descending":
+        setSearchResult(highestFirst(searchResult));
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  if (applySort) {
+    handleSort(sortType);
+    setApplySort(false);
+  }
+
+
+
+  const handleSearch = (event) => {
+    let results;
+    if (event.target.value !== []) {
+      results = sales.filter((sale) =>
+        sale.buyer.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+    } else {
+      results = [...products]
+    }
+    setSearchResult(results);
+    setApplySort(true);
+  };
+
+  const handleSubmit = (event) => event.preventDefault();
   return (
     <div className="sale-page">
       <div className="sale-list-header">
         <h3 className='sale-list-title'>Sales List</h3>
+
       </div>
+      <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+      <Sort onSubmit={handleSubmit} handleSort={handleSort} />
       <div className='sale-containers-title'>
 
         <div>Name</div>
@@ -20,7 +76,7 @@ export default function Sales(props) {
 
       </div>
       <div className='sale-list-container'>
-        {sales.map((sale) => (
+        {searchResult.map((sale) => (
           <Link to={`/sales/${sale.id}`} className='sale-containers' id='sale-link' key={sale.id}>
 
             <div>{sale.product?.name}</div>
