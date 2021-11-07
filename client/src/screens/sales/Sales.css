@@ -55,6 +55,10 @@ color: white;
   color: white;
 }
 
+#SD-link{
+  text-decoration: none;
+}
+
 /* ============================================================== */
 /* Sale Edit css */
 .form{
@@ -117,24 +121,28 @@ background: #C4C4C4;
   color: white;
   position: absolute;
   right: 20px;
-  top: 120px;
-  width: 65vw;
-  border: 2px solid #ffdd29;
-  background-image: linear-gradient(to top right, transparent, #ffdd29);
+  top: 0px;
+  bottom: 0;
+  width: 60vw;
   padding: 20px;
 
 }
 
+.saledetails-title{
+  font-size: 2rem;
+}
+
 .saledetails-img-info{
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
+  gap: 20vw;
 }
 
 .saledetails-buttons{
   display: flex;
   justify-content: center;
-  gap:30px;
+  gap:50px;
+  margin-top: 40px;
 }
 
 .saledetails-info{
@@ -144,10 +152,13 @@ background: #C4C4C4;
 
 .saledetails-desc{
   margin: 20px auto;
+  position: absolute;
+  top: 300px;
 }
 
 #saledetails-img{
-  height: 150px;
+  width: 15vw;
+  margin-right: 60px;
 }
 
 #sale-detail-name{
@@ -169,6 +180,7 @@ background: #C4C4C4;
   flex-direction: column;
   align-items: left;
   gap: 15px;
+  width: 60vw;
   text-align: left;
 }
 /* ============================================================== */

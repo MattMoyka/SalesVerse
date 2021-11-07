@@ -21,7 +21,7 @@ export default function ProductDetails(props) {
 
   return (
     <div className='proddetails-page'>
-      <h3>Product Details</h3>
+      <h3 className='saledetails-title'>Product Details</h3>
 
       <div className='proddetails-img-info'>
         <img src={product.img} id='proddetails-img' />

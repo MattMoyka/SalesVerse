@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { getOneSale } from "../../services/sales"
 import { DateTime } from "luxon"
+import { Button } from "@mui/material"
 
 export default function SaleDetails(props) {
   const { sales, handleSaleDelete } = props
@@ -21,10 +22,10 @@ export default function SaleDetails(props) {
 
   return (
     <div className='saledetails-page'>
-      <h3>Sale Details for {sale?.buyer}</h3>
+      <h3 className='saledetails-title'>Sale Details for {sale?.buyer}</h3>
 
       <div className='saledetails-img-info'>
-        <img src={sale.product?.img} id='saledetails-img' />
+
         <div className='saledetails-info'>
           <div id='sale-detail-name'>{sale.product?.name}</div>
           <div id='sale-detail-total'>${sale.product?.cost + sale.product?.profit}</div>
@@ -35,6 +36,7 @@ export default function SaleDetails(props) {
           <div>Margin: {Math.round(sale.product?.profit / (sale.product?.cost + sale.product?.profit) * 100)}%</div>
           <div>Sold On: {sale?.sold_date}</div>
         </div>
+        <img src={sale.product?.img} id='saledetails-img' />
       </div>
       <div className='saledetails-desc'>
         <div id='sale-detail-desc-form'>
@@ -43,8 +45,8 @@ export default function SaleDetails(props) {
         </div>
       </div>
       <div className='saledetails-buttons'>
-        <Link to={`/sales/${id}/edit`}><button>Edit</button></Link>
-        <button onClick={() => handleSaleDelete(sale?.id)}>Delete</button>
+        <Link to={`/sales/${id}/edit`} id='SD-link'><Button variant='contained'>Edit</Button></Link>
+        <Button type='submit' variant='contained' onClick={() => handleSaleDelete(sale?.id)}>Delete</Button>
       </div>
     </div>
   )
