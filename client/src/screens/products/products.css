@@ -38,7 +38,7 @@ color: white;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   padding: 15px;
  text-align: center;
-  margin: 70px 5px 5px auto;
+  margin: -120px 5px 5px auto;
   width: 70vw;
   color: white;
   position: sticky;
@@ -165,4 +165,13 @@ background: #C4C4C4;
 
 .prodcreate-button{
   margin: 10px;
+}
+
+.product-utils{
+  display: flex;
+ position: absolute;
+align-items: center;
+ top: 100px;
+ right:180px;
+  
 }

@@ -18,7 +18,7 @@ export default function Layouts(props) {
   }
 
   return (
-    <div>{navbar()}</div>
+    <div className='nav'>{navbar()}</div>
   )
 
 

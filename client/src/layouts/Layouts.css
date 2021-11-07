@@ -61,13 +61,18 @@ gap: 35px;
   
   color: white;
   width: 20vw;
-  position: absolute;
+  position: sticky;
   left: 0;
   top:0;
-  bottom:0;
+  
 }
 
 #logout-button{
   margin: 20px;
 }
 
+
+.nav{
+  position: sticky;
+  top:0px;
+}

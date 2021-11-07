@@ -63,8 +63,10 @@ export default function Sales(props) {
         <h3 className='sale-list-title'>Sales List</h3>
 
       </div>
-      <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
-      <Sort onSubmit={handleSubmit} handleSort={handleSort} />
+      <div className='sale-utils'>
+        <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+        <Sort onSubmit={handleSubmit} handleSort={handleSort} />
+      </div>
       <div className='sale-containers-title'>
 
         <div>Name</div>

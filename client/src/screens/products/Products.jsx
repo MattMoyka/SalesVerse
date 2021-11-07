@@ -68,8 +68,10 @@ export default function Products(props) {
         <h3 className='product-list-title'>Product List</h3>
         <Link to='/products/create' id='product-link'>Add Product</Link>
       </div>
-      <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
-      <Sort onSubmit={handleSubmit} handleSort={handleSort} />
+      <div className='product-utils'>
+        <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+        <Sort onSubmit={handleSubmit} handleSort={handleSort} />
+      </div>
       <div className='product-containers-title'>
 
         <div>Name</div>

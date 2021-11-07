@@ -1,6 +1,5 @@
 import './component.css'
 
-
 export default function Search(props) {
   return (
     <form className="search-form" onSubmit={(e) => props.onSubmit(e)}>

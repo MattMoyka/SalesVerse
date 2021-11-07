@@ -3,6 +3,22 @@ width:50vw;
 }
 
 .search-form-input{
-  width: 100%;
+  width: 200px;
  
+}
+
+
+.sort-label{
+  color: white;
+}
+
+
+.fontAwesome-search {
+  font-family: 'Helvetica', FontAwesome, sans-serif;
+  width: 60%;
+  
+  letter-spacing: 0.1px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+
 }

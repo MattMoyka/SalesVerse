@@ -1,6 +1,6 @@
 import { Link, Redirect } from 'react-router-dom'
-
-
+import './screen.css'
+import { Button } from '@mui/material'
 
 export default function Landing(props) {
   const { currentUser } = props
@@ -13,10 +13,13 @@ export default function Landing(props) {
           <Redirect to='/products' />
         </div>
       ) :
-
-        <div>
-          Welcome to the SalesVerse, Are you ready to take you dollar tracking to a whole new level?
-          <Link to='/signup'><button>I'm interested</button></Link>
+        <div className='landing-page'>
+          <div className='landing-container'>
+            <div className='landing-text'>
+              Welcome to the SalesVerse, Are you ready to take you dollar tracking to a whole new level?
+            </div>
+            <Link to='/signup' className='landing-button'><Button variant="contained">I'm interested</Button></Link>
+          </div>
         </div>
       }
     </div>

@@ -6,7 +6,7 @@ User.destroy_all
 
 puts "#{User.count} users created"
 
-10.times do
+15.times do
   Product.create!(name: Faker::Coffee.blend_name, cost: Faker::Number.number(digits: 2),
                   profit: Faker::Number.number(digits: 2), description: Faker::Coffee.notes, img: Faker::LoremFlickr.image(size: '50x60', search_terms: ['coffee']), user: @admin)
 end

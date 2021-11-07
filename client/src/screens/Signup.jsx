@@ -32,7 +32,7 @@ export default function Signup(props) {
           handleSignup(formData)
         }} >
 
-        <h3> Sign Up</h3>
+        <h3 className='login-title'> Sign Up</h3>
 
         <TextField
           id="outlined-basic"
@@ -65,7 +65,7 @@ export default function Signup(props) {
           onChange={handleChange} />
 
 
-        <button id='login-button' variant="contained" color="success">Sign Up</button>
+        <Button id='login-button' type='submit' variant="contained" >Sign Up</Button>
         <Link to='/login' id='login-bottomtext'>Already have an account?</Link>
       </form>
     </div >
