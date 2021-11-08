@@ -5,7 +5,7 @@ import { DateTime } from "luxon"
 import { Button } from "@mui/material"
 
 export default function ProductDetails(props) {
-  const { products, handleProductDelete } = props
+  const { handleProductDelete } = props
   const { id } = useParams()
   const [product, setProduct] = useState([])
 
@@ -35,7 +35,7 @@ export default function ProductDetails(props) {
           {/* <div>Updated: {DateTime.fromISO(product?.updated_at).c?.month}/{DateTime.fromISO(product?.updated_at).c?.day}/{DateTime.fromISO(product?.updated_at).c?.year}</div> */}
           <div>Updated: {DateTime.fromISO(product?.updated_at).toFormat('D')}</div>
         </div>
-        <img src={product.img} id='proddetails-img' />
+        <img src={product.img} id='proddetails-img' alt={product.name} />
       </div>
       <div className='proddetails-desc'>
         <div>Description: {product.description}</div>

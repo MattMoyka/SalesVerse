@@ -29,6 +29,8 @@ const Sort = (props) => {
           <option value="price-descending">&nbsp; Profit, high to low &nbsp;</option>
         </select>
       </form>)
+      default:
+        break
     }
   }
 

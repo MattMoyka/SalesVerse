@@ -7,7 +7,7 @@ import { Button } from '@mui/material'
 import { TextField } from '@mui/material'
 
 export default function ProductEdit(props) {
-  const { handleProductUpdate, currentUser, products } = props
+  const { handleProductUpdate, currentUser } = props
 
   const { id } = useParams()
 
@@ -20,7 +20,7 @@ export default function ProductEdit(props) {
     user_id: `${currentUser?.id}`,
   })
   console.log(currentUser?.id)
-  const { name, cost, profit, description, img } = formData
+  const { name, cost, profit, description } = formData
 
   useEffect(() => {
     const fetchProductItem = async () => {
@@ -35,6 +35,7 @@ export default function ProductEdit(props) {
       });
     };
     fetchProductItem();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   console.log(currentUser?.id)
 

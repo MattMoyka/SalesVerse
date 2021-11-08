@@ -4,7 +4,7 @@ import { getOneProduct } from '../../services/products'
 import './Sales.css'
 import { Button } from '@mui/material'
 export default function SaleCreate(props) {
-  const { handleSaleCreate, currentUser } = props
+  const { handleSaleCreate, currentUser, setToggle1 } = props
   const { product_id } = useParams()
 
 
@@ -39,6 +39,7 @@ export default function SaleCreate(props) {
       });
     };
     fetchProductItem();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product_id]);
 
   console.log(formData)
@@ -55,6 +56,7 @@ export default function SaleCreate(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const created = await handleSaleCreate(formData);
+    setToggle1(prevState => !prevState)
   };
 
   return (
@@ -95,7 +97,7 @@ export default function SaleCreate(props) {
               Description:
             </label>
             <div id='salecreate-form-disp'>{description}</div>
-            <img width='150' src={img} />
+            <img width='150' src={img} alt={name} />
           </div>
         </div>
         <Button type='submit' variant='contained' className='salecreate-button'>Submit</Button>

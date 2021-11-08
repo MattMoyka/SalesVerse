@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getOneSale } from '../../services/sales'
-import { dateformat } from '../../utils/dateformat'
 import { DateTime } from "luxon";
 import { Button } from '@mui/material';
 
@@ -39,7 +38,9 @@ export default function SaleEdit(props) {
       })
       setSaleData(saleInfo)
     };
+
     fetchSaleItem();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
 
@@ -95,7 +96,7 @@ export default function SaleEdit(props) {
               Description:
             </label>
             <div id='saleedit-form-disp-desc'>{saleData.product?.description}</div>
-            <img width='150' src={saleData.product?.img} />
+            <img width='150' src={saleData.product?.img} alt={saleData.product?.name} />
             <label>
               Date:
             </label>

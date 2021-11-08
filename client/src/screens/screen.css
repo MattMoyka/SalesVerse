@@ -56,8 +56,10 @@ padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 15px;
   width: 30vw;
+  height: 30vh;
   margin: 0 auto;
   padding: 15px;
   border: 2px solid #ffdd29;
@@ -68,6 +70,7 @@ padding: 20px;
 .landing-text, .landing-button {
   font-family: 'Oswald', sans-serif;
   text-decoration: none;
+  font-size: 1.75rem;
 }
 
 .landing-page{

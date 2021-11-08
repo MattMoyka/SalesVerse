@@ -1,4 +1,4 @@
-import Landing from './screens/Landing';
+
 import Layouts from './layouts/Layouts';
 import Signup from './screens/Signup';
 import Login from './screens/Login';

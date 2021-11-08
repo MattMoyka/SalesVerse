@@ -1,11 +1,10 @@
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { getOneSale } from "../../services/sales"
-import { DateTime } from "luxon"
 import { Button } from "@mui/material"
 
 export default function SaleDetails(props) {
-  const { sales, handleSaleDelete } = props
+  const { handleSaleDelete } = props
   const { id } = useParams()
   const [sale, setSale] = useState([])
 
@@ -36,7 +35,7 @@ export default function SaleDetails(props) {
           <div>Margin: {Math.round(sale.product?.profit / (sale.product?.cost + sale.product?.profit) * 100)}%</div>
           <div>Sold On: {sale?.sold_date}</div>
         </div>
-        <img src={sale.product?.img} id='saledetails-img' />
+        <img src={sale.product?.img} id='saledetails-img' alt={sale.product?.name} />
       </div>
       <div className='saledetails-desc'>
         <div id='sale-detail-desc-form'>

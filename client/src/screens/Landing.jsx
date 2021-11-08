@@ -16,7 +16,7 @@ export default function Landing(props) {
         <div className='landing-page'>
           <div className='landing-container'>
             <div className='landing-text'>
-              Welcome to the SalesVerse, Are you ready to take you dollar tracking to a whole new level?
+              Welcome to the SalesVerse, Are you ready to incorporate the most modern sales tracking technique into your business?
             </div>
             <Link to='/signup' className='landing-button'><Button variant="contained">I'm interested</Button></Link>
           </div>

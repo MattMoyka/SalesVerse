@@ -1,5 +1,5 @@
 import './Layouts.css'
-import { Link, Switch, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export default function NavHome(props) {
   const { children, currentUser, handleLogout } = props;
   return (

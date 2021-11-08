@@ -105,7 +105,7 @@ export default function MainContainer(props) {
           <Sales sales={sales} products={products} />
         </Route>
         <Route exact path='/products/:product_id/sales'>
-          <SaleCreate handleSaleCreate={handleSaleCreate} currentUser={currentUser} />
+          <SaleCreate handleSaleCreate={handleSaleCreate} currentUser={currentUser} setToggle1={setToggle1} />
         </Route>
         <Route exact path='/sales/:id'>
           <SaleDetails sales={sales} handleSaleDelete={handleSaleDelete} />

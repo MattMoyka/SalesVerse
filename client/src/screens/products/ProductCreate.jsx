@@ -12,7 +12,7 @@ export default function ProductCreate(props) {
     user_id: `${currentUser?.id}`,
   })
 
-  const { name, cost, profit, description, img } = formData
+  const { name, cost, profit, description } = formData
 
   console.log(currentUser?.id)
   const handleChange = (e) => {
