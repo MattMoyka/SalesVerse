@@ -142,7 +142,7 @@ background: #C4C4C4;
   display: flex;
   justify-content: center;
   gap:50px;
-  margin-top: 40px;
+  margin-top: 200px;
 }
 
 .saledetails-info{
@@ -230,4 +230,10 @@ align-items: center;
  top: 100px;
  right:180px;
   
+}
+
+@media only screen and (max-width: 1200px) {
+  .sale-utils{
+    right: 100px;
+  }
 }

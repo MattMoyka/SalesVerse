@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { getOneSale } from '../../services/sales'
 import { dateformat } from '../../utils/dateformat'
 import { DateTime } from "luxon";
-
+import { Button } from '@mui/material';
 
 export default function SaleEdit(props) {
   const { handleSaleUpdate, currentUser, setToggle1 } = props
@@ -88,10 +88,6 @@ export default function SaleEdit(props) {
               Buyer:
             </label>
             <input className='sale-edit-input' type='text' value={buyer} name='buyer' onChange={handleChange} />
-            <label>
-              Date:
-            </label>
-            <input className='sale-edit-input' type='date' value={sold_date} name='sold_date' onChange={handleChange} />
 
           </div>
           <div className='saleedit-form-right'>
@@ -100,11 +96,16 @@ export default function SaleEdit(props) {
             </label>
             <div id='saleedit-form-disp-desc'>{saleData.product?.description}</div>
             <img width='150' src={saleData.product?.img} />
-            <button className='saleedit-button'>Submit</button>
+            <label>
+              Date:
+            </label>
+            <input className='sale-edit-input' type='date' value={sold_date} name='sold_date' onChange={handleChange} />
+
+
           </div>
 
         </div>
-
+        <Button type='submit' variant='contained' >Submit</Button>
       </form>
     </div>
 

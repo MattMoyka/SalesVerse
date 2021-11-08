@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { getOneProduct } from "../../services/products"
 import { DateTime } from "luxon"
+import { Button } from "@mui/material"
 
 export default function ProductDetails(props) {
   const { products, handleProductDelete } = props
@@ -24,7 +25,7 @@ export default function ProductDetails(props) {
       <h3 className='saledetails-title'>Product Details</h3>
 
       <div className='proddetails-img-info'>
-        <img src={product.img} id='proddetails-img' />
+
         <div className='proddetails-info'>
           <div>Product:{product.name}</div>
           <div>Total: {product.cost + product.profit}</div>
@@ -34,14 +35,15 @@ export default function ProductDetails(props) {
           {/* <div>Updated: {DateTime.fromISO(product?.updated_at).c?.month}/{DateTime.fromISO(product?.updated_at).c?.day}/{DateTime.fromISO(product?.updated_at).c?.year}</div> */}
           <div>Updated: {DateTime.fromISO(product?.updated_at).toFormat('D')}</div>
         </div>
+        <img src={product.img} id='proddetails-img' />
       </div>
       <div className='proddetails-desc'>
         <div>Description: {product.description}</div>
       </div>
       <div className='proddetails-buttons'>
-        <Link to={`/products/${id}/edit`}><button>Edit</button></Link>
-        <Link to={`/products/${id}/sales`}><button>Sell</button></Link>
-        <button onClick={() => handleProductDelete(product.id)}>Delete</button>
+        <Link to={`/products/${id}/edit`} id='remove-format'><Button type='button' variant='contained'>Edit</Button></Link>
+        <Link to={`/products/${id}/sales`} id='remove-format'><Button type='button' variant='contained'>Sell</Button></Link>
+        <Button type='button' variant='contained' onClick={() => handleProductDelete(product.id)}>Delete</Button>
       </div>
     </div>
   )

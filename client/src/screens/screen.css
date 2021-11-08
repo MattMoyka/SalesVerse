@@ -33,6 +33,12 @@ padding: 20px;
   color: white;
 }
 
+
+.text-field{
+  background-color: lightgray;
+  border-bottom: 2px blue solid;
+  border-radius: 5px;
+}
 /* ============== */
 /* Landing Screen */
 
@@ -59,4 +65,9 @@ padding: 20px;
   background-image: url('https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   height: 100vh;
 padding: 20px;
+}
+
+
+@media only screen and (max-width: 1100px) {
+ 
 }

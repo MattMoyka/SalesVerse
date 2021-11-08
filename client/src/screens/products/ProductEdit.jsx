@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import ImageUpload from '../../components/ImageUpload'
 import { getOneProduct } from "../../services/products"
 import './products.css'
+import { Button } from '@mui/material'
+import { TextField } from '@mui/material'
 
 export default function ProductEdit(props) {
   const { handleProductUpdate, currentUser, products } = props
@@ -62,29 +64,29 @@ export default function ProductEdit(props) {
             <label>
               Name:
             </label>
-            <input type='text' value={name} name='name' onChange={handleChange} />
+            <TextField className='text-field' type='text' value={name} name='name' onChange={handleChange} />
 
             <label>
               Cost:
             </label>
-            <input type='number' value={cost} name='cost' onChange={handleChange} />
+            <TextField className='text-field' type='number' value={cost} name='cost' onChange={handleChange} />
 
             <label>
               Profit:
             </label>
-            <input type='number' value={profit} name='profit' onChange={handleChange} />
-
-          </div>
-          <div className='prodedit-form-right'>
+            <TextField className='text-field' type='number' value={profit} name='profit' onChange={handleChange} />
             <label>
               Description:
             </label>
-            <textarea type='text' value={description} name='description' rows='5' cols='50' onChange={handleChange} />
+            <textarea className='text-field' type='text' value={description} name='description' onChange={handleChange} />
+
+          </div>
+          <div className='prodedit-form-right'>
 
             <ImageUpload formData={formData} setFormData={setFormData} prevImg={formData?.img} />
           </div>
         </div>
-        <button>Submit</button>
+        <Button type='submit' variant='contained' className='PE-button'>Submit</Button>
       </form>
     </div>
   )

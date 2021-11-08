@@ -45,7 +45,9 @@ export default function Products(props) {
     setApplySort(false);
   }
 
-
+  useEffect(() => {
+    setSearchResult(products)
+  }, [products])
 
   const handleSearch = (event) => {
     let results;

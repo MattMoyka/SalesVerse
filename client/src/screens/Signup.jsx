@@ -41,6 +41,7 @@ export default function Signup(props) {
           type='text'
           name='username'
           value={username}
+          className='text-field'
           onChange={handleChange} />
 
 
@@ -52,6 +53,7 @@ export default function Signup(props) {
           type='text'
           name='email'
           value={email}
+          className='text-field'
           onChange={handleChange} />
 
 
@@ -62,6 +64,7 @@ export default function Signup(props) {
           type='text'
           name='password'
           value={password}
+          className='text-field'
           onChange={handleChange} />
 
 

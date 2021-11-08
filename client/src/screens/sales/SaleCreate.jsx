@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getOneProduct } from '../../services/products'
 import './Sales.css'
+import { Button } from '@mui/material'
 export default function SaleCreate(props) {
   const { handleSaleCreate, currentUser } = props
   const { product_id } = useParams()
+
 
   const [formData, setFormData] = useState({
     buyer: '',
@@ -96,7 +98,7 @@ export default function SaleCreate(props) {
             <img width='150' src={img} />
           </div>
         </div>
-        <button className='salecreate-button'>Submit</button>
+        <Button type='submit' variant='contained' className='salecreate-button'>Submit</Button>
 
       </form>
     </div>

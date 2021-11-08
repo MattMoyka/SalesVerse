@@ -38,7 +38,7 @@ export default function Login(props) {
           variant="filled"
           type='text'
           name='username'
-
+          className='text-field'
           value={username}
           onChange={handleChange}
         />
@@ -46,12 +46,13 @@ export default function Login(props) {
 
 
         <TextField
-          id="outlined-basic"
+          id="filled-size-normal"
           label="Password"
           variant="filled"
           type='password'
           name='password'
           value={password}
+          className='text-field'
           onChange={handleChange}
         />
 
