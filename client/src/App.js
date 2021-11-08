@@ -18,7 +18,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
-
+  const [err, setError] = useState(false)
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -29,15 +29,26 @@ function App() {
   }, []);
 
   const handleSignup = async (formData) => {
-    const userData = await registerUser(formData);
-    setCurrentUser(userData);
-    history.push('/');
+    try {
+      const userData = await registerUser(formData);
+      setCurrentUser(userData);
+      setError(false)
+      history.push('/');
+    } catch (error) {
+      setError(true)
+    }
   };
 
   const handleLogin = async (formData) => {
-    const userData = await loginUser(formData);
-    setCurrentUser(userData);
-    history.push('/');
+    try {
+      const userData = await loginUser(formData);
+      setCurrentUser(userData);
+      history.push('/');
+      setError(false)
+    } catch (error) {
+      setError(true)
+    }
+
   };
 
   const handleLogout = () => {
@@ -53,10 +64,10 @@ function App() {
         <Switch>
 
           <Route path='/login'>
-            <Login handleLogin={handleLogin} />
+            <Login handleLogin={handleLogin} err={err} />
           </Route>
           <Route path='/signup'>
-            <Signup handleSignup={handleSignup} />
+            <Signup handleSignup={handleSignup} err={err} />
           </Route>
           <Route path='/'>
             <MainContainer currentUser={currentUser} />

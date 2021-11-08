@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './screen.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-
+import { Alert } from '@mui/material';
 export default function Signup(props) {
   const [formData, setFormData] = useState({
     username: '',
@@ -12,7 +12,7 @@ export default function Signup(props) {
   })
 
   const { username, email, password } = formData
-  const { handleSignup } = props
+  const { handleSignup, err } = props
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,7 +31,7 @@ export default function Signup(props) {
           e.preventDefault()
           handleSignup(formData)
         }} >
-
+        <Alert severity='error' className={err ? 'show-err' : 'no-show-err'}>Please Provide Valid Info!</Alert>
         <h3 className='login-title'> Sign Up</h3>
 
         <TextField

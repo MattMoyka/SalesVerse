@@ -5,7 +5,7 @@ export default function NavHome(props) {
   return (
     <div >
       <header className='header'>
-        <Link to='/'><h1 className='header-title' id='nodec'>SalesVerse</h1></Link>
+        <Link to='/' id='nodec'><h1 className='header-title' >SalesVerse</h1></Link>
         {currentUser ? (
           <div className='header-text'>
             <p>Welcome back, {currentUser.username}</p>

@@ -21,7 +21,11 @@ color: white
 
 #nodec{
   text-decoration: none;
-  color: white;
+  color: rgb(219, 213, 213);
+}
+
+.header-title{
+  text-decoration: none;
 }
 
 
@@ -101,6 +105,7 @@ gap: 35px;
 }
 
   .ham {
+    transform: scale(1);
     margin: 20px;
     border: none;
     color: white;

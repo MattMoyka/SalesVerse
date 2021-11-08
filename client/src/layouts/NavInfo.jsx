@@ -12,7 +12,7 @@ export default function NavInfo(props) {
   return (
     <div >
       <header className={ham ? 'sidebar no-show' : 'sidebar show'}>
-        <Link to='/'><h1 className='header-title' id='nodec'>SalesVerse</h1></Link>
+        <Link to='/' id='nodec'><h1 className='header-title' >SalesVerse</h1></Link>
         {currentUser ? (
           <div className='navinfo-text'>
             <div className='navinfo-subtext'>

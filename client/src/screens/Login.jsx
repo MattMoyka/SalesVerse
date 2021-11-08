@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './screen.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { Alert } from '@mui/material';
+
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -10,7 +12,7 @@ export default function Login(props) {
     password: '123456',
   });
   const { username, password } = formData;
-  const { handleLogin } = props;
+  const { handleLogin, err } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,6 +21,8 @@ export default function Login(props) {
       [name]: value,
     }));
   };
+
+
 
   return (
     <div className='login-page'>
@@ -30,6 +34,7 @@ export default function Login(props) {
         }}
       >
 
+        <Alert severity='error' className={err ? 'show-err' : 'no-show-err'}>Invalid Credentials!</Alert>
         <h3 className='login-title'>Login</h3>
 
         <TextField

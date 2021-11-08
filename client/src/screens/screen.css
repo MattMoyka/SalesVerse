@@ -39,6 +39,15 @@ padding: 20px;
   border-bottom: 2px blue solid;
   border-radius: 5px;
 }
+
+.show-err{
+
+}
+
+.no-show-err{
+  transform: scale(0);
+}
+
 /* ============== */
 /* Landing Screen */
 
