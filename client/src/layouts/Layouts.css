@@ -77,8 +77,46 @@ gap: 35px;
   top:0px;
 }
 
+.ham{
+  transform: scale(0);
+}
+
 @media only screen and (max-width: 600px) {
-  .header, .sidebar{
-    transform: scale(0);
+  .header, .no-show{
+    transform: translateX(-500px);
+    transition: transform 0.2s;
+    z-index: 5;
+    background: black;
+    width: 200px;
+    padding: 10px;
   }
+
+.show{
+  transform: translateX(0);
+  transition: transform 0.2s;
+  z-index: 5;
+  background: black;
+  width: 200px;
+  padding: 10px;
+}
+
+  .ham {
+    margin: 20px;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    background-color: white;
+    cursor: pointer;
+    z-index: 6;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .closeIcon {
+    display: none;
+  }
+
+ 
+
 }

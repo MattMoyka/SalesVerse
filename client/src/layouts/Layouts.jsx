@@ -16,6 +16,10 @@ export default function Layouts(props) {
       default: return <NavInfo children={children} currentUser={currentUser} handleLogout={handleLogout} />;
     }
   }
+  function scrollToTop() {
+    window.scrollTo(0, 0)
+  }
+  scrollToTop();
 
   return (
     <div className='nav'>{navbar()}</div>

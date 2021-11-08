@@ -1,10 +1,17 @@
 import './Layouts.css'
-import { Link, Switch, useLocation, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 export default function NavInfo(props) {
+
+  const [ham, setHam] = useState(false)
+
+  const toggleHamburger = () => {
+    setHam(prevState => !prevState)
+  }
   const { children, currentUser, handleLogout } = props;
   return (
     <div >
-      <header className='sidebar'>
+      <header className={ham ? 'sidebar no-show' : 'sidebar show'}>
         <Link to='/'><h1 className='header-title' id='nodec'>SalesVerse</h1></Link>
         {currentUser ? (
           <div className='navinfo-text'>
@@ -21,7 +28,11 @@ export default function NavInfo(props) {
             <Link to='/signup' id='nodec'>Sign Up</Link>
           </div>)
         }
+
       </header>
+      <button className="ham" onClick={toggleHamburger}>
+        <i className={ham ? 'X' : '='}></i>
+      </button>
       {children}
     </div >
   )
