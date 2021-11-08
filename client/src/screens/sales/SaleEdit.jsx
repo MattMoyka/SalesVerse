@@ -63,6 +63,8 @@ export default function SaleEdit(props) {
     handleSaleUpdate(id, formData);
   };
 
+
+
   return (
 
     <div className='saleedit-form'>
@@ -100,7 +102,7 @@ export default function SaleEdit(props) {
             <label>
               Date:
             </label>
-            <input className='sale-edit-input' type='date' value={sold_date} name='sold_date' onChange={handleChange} />
+            <input className='sale-edit-input' type='text' value={sold_date} name='sold_date' onChange={handleChange} />
 
 
           </div>

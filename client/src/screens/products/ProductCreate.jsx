@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import ImageUpload from '../../components/ImageUpload'
+import { Button } from '@mui/material'
+
 
 export default function ProductCreate(props) {
   const { handleProductCreate, currentUser, setToggle } = props
@@ -66,7 +68,7 @@ export default function ProductCreate(props) {
             <ImageUpload formData={formData} setFormData={setFormData} />
           </div>
         </div>
-        <button className='prodcreate-button'>Submit</button>
+        <Button type='submit' variant='contained' className='prodcreate-button'>Submit</Button>
       </form>
     </div>
   )
