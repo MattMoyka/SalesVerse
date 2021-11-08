@@ -111,7 +111,7 @@ export default function MainContainer(props) {
           <SaleDetails sales={sales} handleSaleDelete={handleSaleDelete} />
         </Route>
         <Route exact path='/sales/:id/edit'>
-          <SaleEdit currentUser={currentUser} handleSaleUpdate={handleSaleUpdate} setToggle1={setToggle1} />
+          <SaleEdit currentUser={currentUser} handleSaleUpdate={handleSaleUpdate} setToggle1={setToggle1} setToggle={setToggle} />
         </Route>
       </Switch>
 

@@ -5,7 +5,7 @@ import { DateTime } from "luxon";
 import { Button } from '@mui/material';
 
 export default function SaleEdit(props) {
-  const { handleSaleUpdate, currentUser, setToggle1 } = props
+  const { handleSaleUpdate, currentUser, setToggle1, setToggle } = props
   const { id } = useParams()
 
   const [formData, setFormData] = useState({
@@ -51,14 +51,13 @@ export default function SaleEdit(props) {
     setFormData({
       ...formData,
       user_id: currentUser?.id,
+      product_id: saleData.product?.id,
       [name]: value,
     });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(id)
-    console.log(formData)
     setToggle1(prevState => !prevState)
     handleSaleUpdate(id, formData);
   };
