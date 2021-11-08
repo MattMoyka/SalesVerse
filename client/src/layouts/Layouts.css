@@ -76,3 +76,9 @@ gap: 35px;
   position: sticky;
   top:0px;
 }
+
+@media only screen and (max-width: 600px) {
+  .header, .sidebar{
+    transform: scale(0);
+  }
+}

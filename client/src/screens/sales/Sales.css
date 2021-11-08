@@ -232,8 +232,53 @@ align-items: center;
   
 }
 
+
 @media only screen and (max-width: 1200px) {
   .sale-utils{
-    right: 100px;
+    right:100px;
+    flex-direction: column;
+    right: 0;
+    left: 0;
+    gap: 20px;
   }
+ }
+ 
+ 
+ @media only screen and (max-width: 1200px) {
+   .saledetails-desc{
+     top:400px;
+   }
+   .sale-list-header{
+    width: 100vw;
+     justify-content: center;
+     right: 20px;
+     gap: 40px;
+ 
+   }
+ 
+   .sale-containers, .sale-containers-title{
+     margin: -120 auto;
+     width: 90vw;
+     font-size: .5rem;
+    
+   }
+  
+.saledetails-page{
+ align-items: center;
 }
+
+   .saledetails-title{
+     font-size: .75rem;
+
+   }
+
+   #sale-detail-name{
+     font-size: .7rem;
+   }
+   #sale-detail-total{
+    font-size: .5rem;
+  }
+  #sale-details-cp{
+    font-size: .5rem;
+  }
+ }

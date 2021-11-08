@@ -196,6 +196,10 @@ align-items: center;
 @media only screen and (max-width: 1200px) {
  .product-utils{
    right:100px;
+   flex-direction: column;
+   right: 0;
+   left: 0;
+   gap: 20px;
  }
 }
 
@@ -204,4 +208,20 @@ align-items: center;
   .proddetails-desc{
     top:400px;
   }
+  .product-list-header{
+   width: 100vw;
+    justify-content: center;
+    right: 20px;
+    gap: 40px;
+
+  }
+
+  .product-containers, .product-containers-title{
+    margin: -120 auto;
+    width: 90vw;
+    font-size: .5rem;
+   
+  }
+ 
+  
 }
