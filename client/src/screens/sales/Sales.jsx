@@ -43,7 +43,11 @@ export default function Sales(props) {
 
   useEffect(() => {
     setSearchResult(sales)
-  }, [sales, toggle1])
+  }, [sales])
+
+  useEffect(() => {
+    setSearchResult(sales)
+  }, [toggle1])
 
   const handleSearch = (event) => {
     let results;
