@@ -68,9 +68,11 @@ export default function MainContainer(props) {
 
   const handleSaleUpdate = async (id, formData) => {
     const updateSale = await putSale(id, formData)
-
+    console.log(updateSale)
     setSales((prevState) =>
       prevState.map((sale) => {
+        console.log(sale.id)
+        console.log(Number(id))
         return sale.id === Number(id) ? updateSale : sale
       }))
     history.push('/sales')

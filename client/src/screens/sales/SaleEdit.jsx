@@ -58,8 +58,9 @@ export default function SaleEdit(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setToggle1(prevState => !prevState)
+
     handleSaleUpdate(id, formData);
+    setToggle1(prevState => !prevState)
   };
 
 

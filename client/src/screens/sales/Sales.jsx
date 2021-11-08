@@ -7,7 +7,7 @@ import Sort from "../../components/Sort"
 
 export default function Sales(props) {
   const { sales, products, toggle1 } = props
-  console.log(sales)
+
 
   const [applySort, setApplySort] = useState(false);
   const [sortType, setSortType] = useState("name-ascending");
@@ -45,9 +45,6 @@ export default function Sales(props) {
     setSearchResult(sales)
   }, [sales])
 
-  useEffect(() => {
-    setSearchResult(sales)
-  }, [toggle1])
 
   const handleSearch = (event) => {
     let results;
