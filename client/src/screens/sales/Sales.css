@@ -235,19 +235,25 @@ align-items: center;
 
 @media only screen and (max-width: 1200px) {
   .sale-utils{
-    right:100px;
-    flex-direction: column;
-    right: 0;
-    left: 0;
-    gap: 20px;
+    right:70px;
+
   }
  }
  
  
- @media only screen and (max-width: 1200px) {
+ @media only screen and (max-width: 600px) {
    .saledetails-desc{
      top:400px;
+     font-size: .7rem;
    }
+
+.sale-utils{
+  flex-direction: column;
+  right: 0;
+  left: 0;
+  gap: 20px;
+}
+
    .sale-list-header{
     width: 100vw;
      justify-content: center;
@@ -280,5 +286,36 @@ align-items: center;
   }
   #sale-details-cp{
     font-size: .5rem;
+  }
+
+  .form{
+    flex-direction: column;
+    
+    
+  }
+
+
+  .saledetails-img-info{
+    font-size: .7rem;
+    flex-direction: column-reverse;
+    align-content: center;
+    position: relative;
+    text-align: left;
+    width: auto;
+  }
+
+  .saledetails-page{
+  right:15vw;
+
+  }
+  .saledetails-title{
+    position: relative;
+    font-size: 1rem;
+
+  }
+
+  #saledetails-img{
+    margin: 0;
+
   }
  }
