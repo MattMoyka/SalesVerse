@@ -6,7 +6,7 @@ import Search from "../../components/Search"
 import Sort from "../../components/Sort"
 
 export default function Sales(props) {
-  const { sales, products } = props
+  const { sales, products, toggle1 } = props
   console.log(sales)
 
   const [applySort, setApplySort] = useState(false);
@@ -43,7 +43,7 @@ export default function Sales(props) {
 
   useEffect(() => {
     setSearchResult(sales)
-  }, [sales])
+  }, [sales, toggle1])
 
   const handleSearch = (event) => {
     let results;

@@ -5,7 +5,7 @@ import { DateTime } from "luxon";
 import { Button } from '@mui/material';
 
 export default function SaleEdit(props) {
-  const { handleSaleUpdate, currentUser, setToggle1, setToggle } = props
+  const { handleSaleUpdate, currentUser, setToggle1, toggle1 } = props
   const { id } = useParams()
 
   const [formData, setFormData] = useState({
@@ -41,7 +41,7 @@ export default function SaleEdit(props) {
 
     fetchSaleItem();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  }, [id, toggle1]);
 
 
 
