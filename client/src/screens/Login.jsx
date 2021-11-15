@@ -8,8 +8,8 @@ import { Alert } from '@mui/material';
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
-    username: 'admin',
-    password: '123456',
+    username: '',
+    password: '',
   });
   const { username, password } = formData;
   const { handleLogin, err } = props;

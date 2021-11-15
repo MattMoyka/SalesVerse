@@ -21,7 +21,11 @@ export const putProduct = async (id, productData) => {
 };
 
 export const deleteProduct = async (id) => {
-  const resp = await api.delete(`/products/${id}`);
-  return resp;
+  try {
+    const resp = await api.delete(`/products/${id}`);
+    return resp;
+  } catch (error) {
+    alert('Can not delete products with sales!')
+  }
 };
 
