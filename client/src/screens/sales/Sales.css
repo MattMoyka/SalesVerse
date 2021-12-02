@@ -72,8 +72,6 @@ color: white;
   width: 100vw;
   margin: 0 auto;
   padding: 15px;
-  border: 2px solid #ffdd29;
-  background-image: linear-gradient(to top right, transparent, #ffdd29);
   
 }
 
@@ -116,14 +114,10 @@ background: #C4C4C4;
 .saledetails-page{
   display: flex;
   flex-direction: column;
-  color: white;
-  position: absolute;
-  right: 20px;
-  top: 0px;
-  bottom: 0;
-  width: 60vw;
-  padding: 20px;
-
+  color: black;
+  margin: 10px 0;
+  width: 100vw;
+  padding: 100px;
 }
 
 .saledetails-title{
@@ -140,18 +134,18 @@ background: #C4C4C4;
   display: flex;
   justify-content: center;
   gap:50px;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .saledetails-info{
   text-align: left;
   line-height: 25px;
+  
 }
 
 .saledetails-desc{
-  margin: 20px auto;
-  position: absolute;
-  top: 300px;
+  margin: 20px 0;
+
 }
 
 #saledetails-img{
@@ -191,14 +185,10 @@ background: #C4C4C4;
 }
 
 .salecreate-form{
-  width: 60vw;
+  width: 100vw;
   margin: 0 auto;
   padding: 15px;
-  border: 2px solid #ffdd29;
-  background-image: linear-gradient(to top right, transparent, #ffdd29);
-  position: absolute;
-  right: 30px;
-  top: 100px;
+  
 }
 
 .salecreate-form-left, .salecreate-form-right{
@@ -237,13 +227,23 @@ align-items: center;
 
   }
  }
+ @media only screen and (min-width: 1200px) {
+  .saledetails-page{
+    padding: 0 300px;
+  }
  
+ }
  
  @media only screen and (max-width: 600px) {
    .saledetails-desc{
-     top:400px;
+     
      font-size: .7rem;
    }
+
+   .saledetails-page{
+    padding: 0 30px;
+    text-align: left;
+  }
 
 .sale-utils{
   align-items: center;
@@ -304,14 +304,14 @@ top:150px;
   .saledetails-img-info{
     font-size: .7rem;
     flex-direction: column-reverse;
-    align-content: center;
-    position: relative;
+  
+
     text-align: left;
-    width: auto;
+    width: 60vw;
   }
 
   .saledetails-page{
-  right:15vw;
+  
 
   }
   .saledetails-title{

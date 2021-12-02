@@ -73,8 +73,6 @@ right:50px;
   width: 100vw;
   margin: 0 auto;
   padding: 15px;
-  border: 2px solid #42E4CD;
-  background-image: linear-gradient(to top right, transparent, #42E4CD);
   position: absolute;
   right: 30px;
   top: 100px;
@@ -118,7 +116,7 @@ right:50px;
   display: flex;
   justify-content: center;
   gap:50px;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 .proddetails-info{

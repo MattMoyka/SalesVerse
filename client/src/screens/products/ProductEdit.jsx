@@ -60,7 +60,7 @@ export default function ProductEdit(props) {
 
   };
   console.log(formData)
-  const paperStyle = { padding: 20, height: '70vh', width: '90vw', margin: '20px auto' }
+  const paperStyle = { padding: 20, height: 'auto', width: '90vw', margin: '20px auto' }
   return (
     <div className='prodedit-form'>
 
