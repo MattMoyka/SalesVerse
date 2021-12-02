@@ -27,7 +27,7 @@ export default function ProductDetails(props) {
       <div className='proddetails-img-info'>
 
         <div className='proddetails-info'>
-          <div>Product:{product.name}</div>
+          <div>Product: {product.name}</div>
           <div>Total: {product.cost + product.profit}</div>
           <div>Cost: {product.cost}</div>
           <div>Profit: {product.profit}</div>
@@ -38,13 +38,13 @@ export default function ProductDetails(props) {
         <img src={product.img} id='proddetails-img' alt={product.name} />
       </div>
       <div className='proddetails-desc'>
-        <div>Description: {product.description}</div>
+        <div>Description: <br /> {product.description}</div>
       </div>
       <div className='proddetails-buttons'>
         <Link to={`/products/${id}/edit`} id='remove-format'><Button type='button' variant='contained'>Edit</Button></Link>
         <Link to={`/products/${id}/sales`} id='remove-format'><Button type='button' variant='contained'>Sell</Button></Link>
         <Button type='button' variant='contained' onClick={() => handleProductDelete(product.id)}>Delete</Button>
       </div>
-    </div>
+    </div >
   )
 }

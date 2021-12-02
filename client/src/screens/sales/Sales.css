@@ -69,14 +69,12 @@ color: white;
 }
 
 .saleedit-form{
-  width: 60vw;
+  width: 100vw;
   margin: 0 auto;
   padding: 15px;
   border: 2px solid #ffdd29;
   background-image: linear-gradient(to top right, transparent, #ffdd29);
-  position: absolute;
-  right: 30px;
-  top: 100px;
+  
 }
 
 .saleedit-form-left, .saleedit-form-right{

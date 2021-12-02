@@ -6,6 +6,10 @@ import './products.css'
 import { Button } from '@mui/material'
 import { TextField } from '@mui/material'
 
+
+import { Alert, Avatar, Typography } from '@mui/material';
+import { Grid, Paper } from '@mui/material';
+
 export default function ProductEdit(props) {
   const { handleProductUpdate, currentUser } = props
 
@@ -56,11 +60,11 @@ export default function ProductEdit(props) {
 
   };
   console.log(formData)
+  const paperStyle = { padding: 20, height: '70vh', width: '90vw', margin: '20px auto' }
   return (
     <div className='prodedit-form'>
-      <h3>Edit Item</h3>
-      <form onSubmit={handleSubmit} >
-        <div className='form'>
+
+      {/* <div className='form'>
           <div className='prodedit-form-left'>
             <label>
               Name:
@@ -86,8 +90,72 @@ export default function ProductEdit(props) {
 
             <ImageUpload formData={formData} setFormData={setFormData} prevImg={formData?.img} />
           </div>
-        </div>
-        <Button type='submit' variant='contained' className='PE-button'>Submit</Button>
+        </div> */}
+
+      <form onSubmit={handleSubmit} >
+        <Grid>
+          <Paper elevation={10} style={paperStyle}>
+            <h3>Edit Item</h3>
+            <Grid container spacing={2} align='center'>
+              <Grid
+                item
+                xs={6}
+              >
+                <TextField
+                  label="name"
+                  placeholder='enter product name'
+                  fullWidth
+                  required
+                  type='text'
+                  name='name'
+                  variant="standard"
+                  value={name}
+                  onChange={handleChange}
+                />
+                <TextField
+                  label="cost"
+                  placeholder='enter cost'
+                  fullWidth
+                  required
+                  type='number'
+                  name='cost'
+                  variant="standard"
+                  value={cost}
+                  onChange={handleChange}
+                />
+                <TextField
+                  label="profit"
+                  placeholder='enter profit'
+                  fullWidth
+                  required
+                  type='number'
+                  name='profit'
+                  variant="standard"
+                  value={profit}
+                  onChange={handleChange}
+                />
+                <TextField
+                  label="description"
+                  placeholder='enter description'
+                  fullWidth
+                  required
+                  type='textarea'
+                  name='description'
+                  variant="standard"
+                  value={description}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={6}
+              >
+                <ImageUpload formData={formData} setFormData={setFormData} prevImg={formData?.img} />
+
+              </Grid>
+            </Grid>
+            <Button type='submit' variant='contained' className='PE-button'>Submit</Button>
+
+          </Paper>
+        </Grid>
       </form>
     </div>
   )

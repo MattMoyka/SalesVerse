@@ -25,6 +25,14 @@
 
 }
 
+.image-upload{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 @media only screen and (max-width: 1200px) {
 .search-input{
   width: 300px;
