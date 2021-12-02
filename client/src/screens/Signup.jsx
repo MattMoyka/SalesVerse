@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom'
 import './screen.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { Alert } from '@mui/material';
+import { Alert, Avatar, Grid, Paper, Typography } from '@mui/material';
+import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
+
+
 export default function Signup(props) {
   const [formData, setFormData] = useState({
     username: '',
@@ -22,55 +25,70 @@ export default function Signup(props) {
     }));
   };
 
+  const paperStyle = { padding: 20, height: '70vh', width: '280px', margin: '20px auto' }
+  const avatarStyle = { backgroundColor: 'green' }
+  const btstyle = { margin: '8px 0' }
 
   return (
-    <div className='login-page'>
-      <form
-        className="login-form"
-        onSubmit={(e) => {
-          e.preventDefault()
-          handleSignup(formData)
-        }} >
-        <Alert severity='error' className={err ? 'show-err' : 'no-show-err'}>Please Provide Valid Info!</Alert>
-        <h3 className='login-title'> Sign Up</h3>
 
-        <TextField
-          id="outlined-basic"
-          label="Username"
-          variant="filled"
-          type='text'
-          name='username'
-          value={username}
-          className='text-field'
-          onChange={handleChange} />
+    <form
+
+      onSubmit={(e) => {
+        e.preventDefault()
+        handleSignup(formData)
+      }} >
+
+      <Grid>
+        <Paper elevation={10} style={paperStyle}>
+          <Grid align='center'>
+            <Avatar style={avatarStyle}><AddCircleSharpIcon /></Avatar>
+            <h2> Sign Up</h2>
 
 
-
-        <TextField
-          id="outlined-basic"
-          label="Email"
-          variant="filled"
-          type='text'
-          name='email'
-          value={email}
-          className='text-field'
-          onChange={handleChange} />
-
-
-        <TextField
-          id="outlined-basic"
-          label="Password"
-          variant="filled"
-          type='text'
-          name='password'
-          value={password}
-          className='text-field'
-          onChange={handleChange} />
+            <TextField
+              label="Username"
+              variant="standard"
+              fullWidth
+              required
+              type='text'
+              name='username'
+              value={username}
+              onChange={handleChange} />
 
 
-        <Button id='login-button' type='submit' variant="contained" >Sign Up</Button>
-        <Link to='/login' id='login-bottomtext'>Already have an account?</Link>
-      </form>
-    </div >
+
+            <TextField
+
+              label="Email"
+              variant="standard"
+              fullWidth
+              required
+              type='text'
+              name='email'
+              value={email}
+              onChange={handleChange} />
+
+
+            <TextField
+
+              label="Password"
+              variant="standard"
+              fullWidth
+              required
+              type='text'
+              name='password'
+              value={password}
+              onChange={handleChange} />
+
+
+            <Button type='submit' variant="contained" style={btstyle} fullWidth >Sign Up</Button>
+            <Typography>Already have an account?
+              <Link to='/login' > Login</Link>
+            </Typography>
+          </Grid>
+        </Paper>
+      </Grid>
+    </form>
+
   )
 }

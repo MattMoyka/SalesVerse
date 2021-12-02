@@ -8,7 +8,7 @@ export default function Search(props) {
         value={props.value}
         onChange={(e) => props.handleSearch(e)}
         name="Search"
-        placeholder="&#xf002; &nbsp;Search Product" className="fontAwesome-search search-input"
+        placeholder="&#xf002; &nbsp;Search" className="fontAwesome-search search-input"
         type="text"
         autoFocus
       />

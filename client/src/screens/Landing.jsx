@@ -1,27 +1,43 @@
 import { Link, Redirect } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import './screen.css'
 import { Button } from '@mui/material'
+import { Collapse } from '@mui/material'
+import { Box } from '@mui/system'
 
 export default function Landing(props) {
   const { currentUser } = props
+  const [checked, setChecked] = useState(false)
+  useEffect(() => {
+    setChecked(true)
+  }, [])
+
+
   return (
     <div>
 
-      {currentUser ? (
-        <div>
 
-          <Redirect to='/products' />
-        </div>
-      ) :
-        <div className='landing-page'>
-          <div className='landing-container'>
+
+      <div className='landing-container'>
+        <Collapse in={checked}
+          {... (checked ? { timeout: 1500 } : {})}
+        >
+          <Box>
             <div className='landing-text'>
-              Welcome to the SalesVerse, Are you ready to incorporate the most modern sales tracking technique into your business?
+              Welcome to the <span style={{ color: 'blue' }}>SalesVerse!</span>
             </div>
-            <Link to='/signup' className='landing-button'><Button variant="contained">I'm interested</Button></Link>
-          </div>
-        </div>
-      }
-    </div>
+            <div>
+              <Link to={currentUser ? '/products' : '/signup'} className='landing-button'>
+                <Button variant="contained">I'm interested</Button>
+              </Link>
+            </div>
+          </Box>
+        </Collapse>
+      </div>
+
+
+
+
+    </div >
   )
 }

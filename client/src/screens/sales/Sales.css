@@ -1,15 +1,14 @@
-body{
-  background-color: #0e0e0e;
-}
+
 
 .sale-list-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-width: 35vw;
-position: absolute;
+width: 50vw;
+position: fixed;
 right:50px;
 top:20px;
+z-index: 9000;
 color: white;
 
 }
@@ -25,8 +24,8 @@ color: white;
   text-align: center;
   padding: 15px;
   border: 1px solid #ffdd29;
-  margin: 10px 5px 5px auto;
-  width: 70vw;
+  margin: 10px auto;
+  width: 90vw;
   color: white;
   text-decoration: none;
   background-color: #0e0e0e;
@@ -38,12 +37,13 @@ color: white;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   padding: 15px;
  text-align: center;
-  margin: -120px 5px 5px auto;
-  width: 70vw;
+  margin: 40px auto 5px auto;
+  width: 90vw;
   color: white;
   position: sticky;
-  top: 0px;
+  top: 84.22px;
   background-color: #0e0e0e;
+  border-bottom: white 2px solid;
 }
 
 .sale-list-container{
@@ -248,18 +248,23 @@ align-items: center;
    }
 
 .sale-utils{
-  flex-direction: column;
-  right: 0;
-  left: 0;
-  gap: 20px;
+  align-items: center;
+  left: 10px;
+  right: 10px;
+  gap: 5px;
+top:150px;
 }
 
    .sale-list-header{
     width: 100vw;
+    height: auto;
      justify-content: center;
-     right: 20px;
-     gap: 40px;
- 
+     color: black;
+     position: absolute;
+     right: 5px;
+     top: 80px;
+     gap: 20px;
+ z-index: 0;
    }
  
    .sale-containers, .sale-containers-title{
@@ -268,6 +273,9 @@ align-items: center;
      font-size: .5rem;
     
    }
+   .sale-page{
+    margin-top: 100px;
+  }
   
 .saledetails-page{
  align-items: center;
