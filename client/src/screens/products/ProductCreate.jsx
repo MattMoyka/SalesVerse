@@ -47,10 +47,11 @@ export default function ProductCreate(props) {
         <Grid>
           <Paper elevation={10} style={paperStyle}>
             <h3>Create Item</h3>
-            <Grid container spacing={2} align='center'>
+            <Grid container spacing={2} columns={{ xs: 2, sm: 12 }} align='center'>
               <Grid
                 item
-                xs={6}
+                sm={6}
+                xs={2}
               >
                 <TextField
                   label="name"
@@ -97,7 +98,8 @@ export default function ProductCreate(props) {
                   onChange={handleChange}
                 />
               </Grid>
-              <Grid item xs={6}
+              <Grid item sm={6}
+                xs={2}
               >
                 <ImageUpload formData={formData} setFormData={setFormData} prevImg={formData?.img} />
 
