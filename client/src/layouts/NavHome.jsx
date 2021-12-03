@@ -77,8 +77,10 @@ export default function NavHome(props) {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={handleClose}><Link to='/login' id='nodec'>Log In</Link></MenuItem>
-                  <MenuItem onClick={handleClose}><Link to='/signup' id='nodec'>Sign Up</Link></MenuItem>
+                  {currentUser ? <h4>hello</h4> :
+                    <>
+                      <MenuItem onClick={handleClose}><Link to='/login' id='nodec' >Log In</Link></MenuItem>
+                      <MenuItem onClick={handleClose}><Link to='/signup' id='nodec'>Sign Up</Link></MenuItem></>}
                 </Menu>
               </Box>
               <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>

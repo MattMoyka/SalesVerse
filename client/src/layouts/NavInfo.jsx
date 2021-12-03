@@ -153,8 +153,8 @@ export default function NavInfo(props) {
           </DrawerHeader>
           <Divider />
           <Typography>Welcome, {currentUser?.username}</Typography>
-          <Button onClick={handleDrawerClose}><Link to='/products' id='nodec'>Products</Link></Button>
-          <Button onClick={handleDrawerClose}><Link to='/sales' id='nodec'>Sales</Link></Button>
+          <Button onClick={handleDrawerClose}><Link to='/products' id='nodec1'>Products</Link></Button>
+          <Button onClick={handleDrawerClose}><Link to='/sales' id='nodec1'>Sales</Link></Button>
           <Divider />
           <Button onClick={handleLogout}>Log Out</Button>
         </Drawer>
