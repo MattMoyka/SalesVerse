@@ -3,6 +3,9 @@ import { useParams } from 'react-router'
 import { getOneProduct } from '../../services/products'
 import './Sales.css'
 import { Button } from '@mui/material'
+
+import TextField from '@mui/material/TextField';
+import { Grid, Paper } from '@mui/material';
 export default function SaleCreate(props) {
   const { handleSaleCreate, currentUser, setToggle1 } = props
   const { product_id } = useParams()
@@ -56,51 +59,115 @@ export default function SaleCreate(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const created = await handleSaleCreate(formData);
+
     setToggle1(prevState => !prevState)
   };
+  const paperStyle = { padding: 20, height: 'auto', width: '90vw', margin: '20px auto' }
 
   return (
 
     <div className='salecreate-form'>
-      <h3>Sell Item</h3>
+
       <form onSubmit={handleSubmit}>
-        <div className='form'>
-          <div className='salecreate-form-left'>
-            <label>
-              Name:
-            </label>
-            <div id='salecreate-form-disp'>{name}</div>
+        <Grid>
+          <Paper elevation={10} style={paperStyle}>
+            <h3>Create Sale</h3>
+            <Grid container spacing={2} columns={{ xs: 2, sm: 12 }} align='center'>
+              <Grid
+                item
+                sm={6}
+                xs={2}
+              >
+                <TextField
+                  id="standard-read-only-input"
+                  label="Product Name"
 
-            <label>
-              Cost:
-            </label>
-            <div id='salecreate-form-disp'>{cost}</div>
+                  value={name}
+                  fullWidth
+                  InputProps={{
+                    readOnly: true,
 
-            <label>
-              Profit:
-            </label>
-            <div id='salecreate-form-disp'>{profit}</div>
-            <label>
-              Buyer:
-            </label>
-            <input type='text' value={buyer} name='buyer' onChange={handleChange} />
-            <label>
-              Date:
-            </label>
-            <input type='date' value={sold_date} name='sold_date' onChange={handleChange} />
+                  }}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="standard"
+                />
+                <TextField
+                  id="standard-read-only-input"
+                  label="Product Cost"
+                  value={cost}
+                  fullWidth
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="standard"
+                />
+                <TextField
+                  id="standard-read-only-input"
+                  label="Product Profit"
+                  value={profit}
+                  fullWidth
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="standard"
+                />
+                <TextField
+                  label="buyer"
+                  placeholder='enter buyer'
+                  fullWidth
+                  required
+                  type='textarea'
+                  name='buyer'
+                  variant="standard"
+                  value={buyer}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item sm={6}
+                xs={2}
+              >
+                <TextField
+                  id="standard-read-only-input"
+                  label="Product Description"
+                  value={description}
+                  fullWidth
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="standard"
+                />
+                <img width='150' style={{ margin: '10px' }} src={img} alt={name} />
+                <TextField
+                  label="sold_date"
+                  placeholder=''
+                  fullWidth
+                  required
+                  type='date'
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  name='sold_date'
+                  variant="standard"
+                  value={sold_date}
+                  onChange={handleChange}
+                />
+              </Grid>
+            </Grid>
+            <Button type='submit' variant='contained' style={{ margin: '15px' }} className='salecreate-button'>Submit</Button>
+          </Paper>
+        </Grid>
 
-          </div>
-
-
-          <div className='salecreate-form-right'>
-            <label>
-              Description:
-            </label>
-            <div id='salecreate-form-disp'>{description}</div>
-            <img width='150' src={img} alt={name} />
-          </div>
-        </div>
-        <Button type='submit' variant='contained' className='salecreate-button'>Submit</Button>
 
       </form>
     </div>

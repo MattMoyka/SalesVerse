@@ -33,7 +33,7 @@ function App() {
       const userData = await registerUser(formData);
       setCurrentUser(userData);
       setError(false)
-      history.push('/');
+      history.push('/products');
     } catch (error) {
       setError(true)
     }
@@ -43,7 +43,7 @@ function App() {
     try {
       const userData = await loginUser(formData);
       setCurrentUser(userData);
-      history.push('/');
+      history.push('/products');
       setError(false)
     } catch (error) {
       setError(true)

@@ -2,7 +2,7 @@
 .header{
   display: flex;
   justify-content: space-around;
-  background: black;
+  background: white;
   box-shadow: 5px 5px 5px white;
 }
 
@@ -21,7 +21,12 @@ color: white
 
 #nodec{
   text-decoration: none;
-  color: rgb(219, 213, 213);
+  color: white;
+}
+
+#nodec1{
+  text-decoration: none;
+  color: rgb(0, 149, 255);
 }
 
 .header-title{
@@ -45,7 +50,7 @@ color: white
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: start;
+  justify-content: flex-start;
   color: white;
   gap: 50px;
   
