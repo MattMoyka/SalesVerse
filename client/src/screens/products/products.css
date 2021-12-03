@@ -73,9 +73,7 @@ right:50px;
   width: 100vw;
   margin: 0 auto;
   padding: 15px;
-  position: absolute;
-  right: 30px;
-  top: 100px;
+ 
 }
 
 .prodedit-form-left, .prodedit-form-right{
@@ -152,9 +150,7 @@ right:50px;
   width: 100vw;
   margin: 0 auto;
   padding: 15px;
-  position: absolute;
-  right: 30px;
-  top: 100px;
+  
 }
 
 .prodcreate-form-left, .prodcreate-form-right{
