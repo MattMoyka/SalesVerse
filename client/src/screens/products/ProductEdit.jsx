@@ -5,9 +5,6 @@ import { getOneProduct } from "../../services/products"
 import './products.css'
 import { Button } from '@mui/material'
 import { TextField } from '@mui/material'
-
-
-import { Alert, Avatar, Typography } from '@mui/material';
 import { Grid, Paper } from '@mui/material';
 
 export default function ProductEdit(props) {
@@ -63,34 +60,6 @@ export default function ProductEdit(props) {
   const paperStyle = { padding: 20, height: 'auto', width: '90vw', margin: '20px auto' }
   return (
     <div className='prodedit-form'>
-
-      {/* <div className='form'>
-          <div className='prodedit-form-left'>
-            <label>
-              Name:
-            </label>
-            <TextField className='text-field' type='text' value={name} name='name' onChange={handleChange} />
-
-            <label>
-              Cost:
-            </label>
-            <TextField className='text-field' type='number' value={cost} name='cost' onChange={handleChange} />
-
-            <label>
-              Profit:
-            </label>
-            <TextField className='text-field' type='number' value={profit} name='profit' onChange={handleChange} />
-            <label>
-              Description:
-            </label>
-            <textarea className='text-field' type='text' value={description} name='description' onChange={handleChange} />
-
-          </div>
-          <div className='prodedit-form-right'>
-
-            <ImageUpload formData={formData} setFormData={setFormData} prevImg={formData?.img} />
-          </div>
-        </div> */}
 
       <form onSubmit={handleSubmit} >
         <Grid>

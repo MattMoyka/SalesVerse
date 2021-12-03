@@ -18,40 +18,42 @@ import TableRow from '@mui/material/TableRow';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'total', label: 'Total', minWidth: 100 },
+  { id: 'total', label: 'Total', minWidth: 100, format: (value) => `$${value}` },
   {
     id: 'cost',
     label: 'Cost',
     minWidth: 170,
     align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
+    format: (value) => `$${value}`,
   },
   {
     id: 'profit',
     label: 'Profit',
     minWidth: 170,
     align: 'right',
+    format: (value) => `$${value}`
   },
   {
     id: 'margin',
     label: 'Margin',
     minWidth: 170,
     align: 'right',
-    format: (value) => value.toFixed(2),
+    format: (value) => `%${value.toFixed(2)}`,
   },
   {
     id: 'updated',
     label: 'Updated',
     minWidth: 170,
     align: 'right',
+
   },
 ];
 
 function createData(name, cost, profit, date, id) {
   const total = cost + profit;
   const margin = profit / (total) * 100;
-  const datef = DateTime.fromISO(date).toFormat('D')
-  return { name, total, cost, profit, margin, datef, id };
+  const updated = DateTime.fromISO(date).toFormat('D')
+  return { name, total, cost, profit, margin, updated, id };
 }
 
 
@@ -144,29 +146,6 @@ export default function Products(props) {
         <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
         <Sort onSubmit={handleSubmit} handleSort={handleSort} />
       </div>
-      {/* <div className='product-containers-title'>
-
-        <div>Name</div>
-        <div>Total</div>
-        <div>Cost</div>
-        <div>Profit</div>
-        <div>Margin</div>
-        <div>Updated</div>
-
-      </div>
-      <div className='product-list-container'>
-        {searchResult.map((product) => (
-          <Link to={`/products/${product.id}`} className='product-containers' id='product-link' key={product.id}>
-
-            <div>{product?.name}</div>
-            <div>${product?.cost + product?.profit}</div>
-            <div>${product?.cost}</div>
-            <div>${product?.profit}</div>
-            <div>{Math.round(product?.profit / (product?.cost + product?.profit) * 100)}%</div>
-            <div>{DateTime.fromISO(product?.updated_at).toFormat('D')}</div>
-
-          </Link>
-        ))}</div> */}
 
       <Paper sx={{ width: '100%', overflow: 'hidden', margin: '80px 0' }}>
         <TableContainer sx={{ height: '70vh' }}>
@@ -189,7 +168,7 @@ export default function Products(props) {
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
                   return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={row.code} style={{ cursor: 'pointer' }} onClick={() => (history.push(`/products/${row?.id}`))}>
+                    <TableRow hover role="checkbox" tabIndex={-1} key={row?.id} style={{ cursor: 'pointer' }} onClick={() => (history.push(`/products/${row?.id}`))}>
                       {columns.map((column) => {
                         const value = row[column.id];
                         return (
