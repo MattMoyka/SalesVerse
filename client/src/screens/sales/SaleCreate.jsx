@@ -71,7 +71,7 @@ export default function SaleCreate(props) {
       <form onSubmit={handleSubmit}>
         <Grid>
           <Paper elevation={10} style={paperStyle}>
-            <h3>Create Sale</h3>
+            <h3>Enter Sale</h3>
             <Grid container spacing={2} columns={{ xs: 2, sm: 12 }} align='center'>
               <Grid
                 item
