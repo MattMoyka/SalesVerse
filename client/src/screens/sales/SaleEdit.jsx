@@ -5,7 +5,6 @@ import { DateTime } from "luxon";
 import { Button } from '@mui/material';
 
 import TextField from '@mui/material/TextField';
-import { Alert, Avatar, Typography } from '@mui/material';
 import { Grid, Paper } from '@mui/material';
 
 export default function SaleEdit(props) {

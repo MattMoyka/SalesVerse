@@ -163,7 +163,7 @@ background: #C4C4C4;
 
 #sale-details-cp{
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 30px;
 }
 

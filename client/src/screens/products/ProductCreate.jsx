@@ -43,34 +43,6 @@ export default function ProductCreate(props) {
   return (
     <div className='prodcreate-form'>
       <form onSubmit={handleSubmit}>
-        {/* <div className='form'>
-          <div className='prodcreate-form-left'>
-            <label>
-              Name:
-            </label>
-            <input type='text' value={name} name='name' onChange={handleChange} />
-
-            <label>
-              Cost:
-            </label>
-            <input type='number' value={cost} name='cost' onChange={handleChange} />
-
-            <label>
-              Profit:
-            </label>
-            <input type='number' value={profit} name='profit' onChange={handleChange} />
-
-          </div>
-          <div className='prodcreate-form-right'>
-            <label>
-              Description:
-            </label>
-            <textarea type='text' value={description} name='description' onChange={handleChange} />
-
-            <ImageUpload formData={formData} setFormData={setFormData} />
-          </div>
-        </div>
-        <Button type='submit' variant='contained' className='prodcreate-button'>Submit</Button> */}
 
         <Grid>
           <Paper elevation={10} style={paperStyle}>

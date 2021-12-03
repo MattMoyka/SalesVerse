@@ -5,7 +5,6 @@ import './Sales.css'
 import { Button } from '@mui/material'
 
 import TextField from '@mui/material/TextField';
-import { Alert, Avatar, Typography } from '@mui/material';
 import { Grid, Paper } from '@mui/material';
 export default function SaleCreate(props) {
   const { handleSaleCreate, currentUser, setToggle1 } = props
@@ -60,6 +59,7 @@ export default function SaleCreate(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const created = await handleSaleCreate(formData);
+
     setToggle1(prevState => !prevState)
   };
   const paperStyle = { padding: 20, height: 'auto', width: '90vw', margin: '20px auto' }
@@ -67,43 +67,6 @@ export default function SaleCreate(props) {
   return (
 
     <div className='salecreate-form'>
-
-      {/* <div className='form'>
-          <div className='salecreate-form-left'>
-            <label>
-              Name:
-            </label>
-            <div id='salecreate-form-disp'>{name}</div>
-
-            <label>
-              Cost:
-            </label>
-            <div id='salecreate-form-disp'>{cost}</div>
-
-            <label>
-              Profit:
-            </label>
-            <div id='salecreate-form-disp'>{profit}</div>
-            <label>
-              Buyer:
-            </label>
-            <input type='text' value={buyer} name='buyer' onChange={handleChange} />
-            <label>
-              Date:
-            </label>
-            <input type='date' value={sold_date} name='sold_date' onChange={handleChange} />
-
-          </div>
-
-
-          <div className='salecreate-form-right'>
-            <label>
-              Description:
-            </label>
-            <div id='salecreate-form-disp'>{description}</div>
-            <img width='150' src={img} alt={name} />
-          </div>
-        </div> */}
 
       <form onSubmit={handleSubmit}>
         <Grid>

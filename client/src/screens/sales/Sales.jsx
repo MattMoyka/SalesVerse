@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import './Sales.css'
 import { useState, useEffect } from "react"
 import { useHistory } from "react-router"
@@ -57,7 +56,7 @@ function createData(name, cost, profit, buyer, sold, id) {
 
 
 export default function Sales(props) {
-  const { sales, products, toggle1 } = props
+  const { sales, products } = props
   const history = useHistory();
 
   const [applySort, setApplySort] = useState(false);

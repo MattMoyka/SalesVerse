@@ -12,7 +12,7 @@ import Menu from '@mui/material/Menu';
 
 
 export default function NavHome(props) {
-  const { children, currentUser, handleLogout } = props;
+  const { children, currentUser } = props;
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleMenu = (event) => {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './screen.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { Alert, Avatar, Grid, Paper, Typography } from '@mui/material';
+import { Avatar, Grid, Paper, Typography } from '@mui/material';
 import AddCircleSharpIcon from '@mui/icons-material/AddCircleSharp';
 
 
@@ -15,7 +15,7 @@ export default function Signup(props) {
   })
 
   const { username, email, password } = formData
-  const { handleSignup, err } = props
+  const { handleSignup } = props
 
   const handleChange = (e) => {
     const { name, value } = e.target;

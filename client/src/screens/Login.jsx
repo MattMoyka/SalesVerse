@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './screen.css'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { Alert, Avatar, Typography } from '@mui/material';
+import { Avatar, Typography } from '@mui/material';
 import { Grid, Paper } from '@mui/material';
 import LoginSharpIcon from '@mui/icons-material/LoginSharp';
 
@@ -13,7 +13,7 @@ export default function Login(props) {
     password: '',
   });
   const { username, password } = formData;
-  const { handleLogin, err } = props;
+  const { handleLogin } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,46 +28,7 @@ export default function Login(props) {
   const avatarStyle = { backgroundColor: 'green' }
   const btstyle = { margin: '8px 0' }
   return (
-    //   <div className='login-page'>
-    //     <form
-    //       className="login-form"
-    //       onSubmit={(e) => {
-    //         e.preventDefault();
-    //         handleLogin(formData);
-    //       }}
-    //     >
 
-    //       <h3 className='login-title'>Login</h3>
-
-    //       <TextField
-    //         id="outlined-basic"
-    //         label="Username"
-    //         variant="filled"
-    //         type='text'
-    //         name='username'
-    //         className='text-field'
-    //         value={username}
-    //         onChange={handleChange}
-    //       />
-
-
-
-    //       <TextField
-    //         id="filled-size-normal"
-    //         label="Password"
-    //         variant="filled"
-    //         type='password'
-    //         name='password'
-    //         value={password}
-    //         className='text-field'
-    //         onChange={handleChange}
-    //       />
-
-
-    //       <Button id='login-button' type='submit' variant='contained' >Log In</Button>
-    //       <Link to='/signup' id='login-bottomtext'>Don't have an account?</Link>
-    //  </form>
-    //   </div>
     <form
       onSubmit={(e) => {
         e.preventDefault()

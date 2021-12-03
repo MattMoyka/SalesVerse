@@ -1,4 +1,4 @@
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import './screen.css'
 import { Button } from '@mui/material'
@@ -28,7 +28,7 @@ export default function Landing(props) {
             </div>
             <div>
               <Link to={currentUser ? '/products' : '/signup'} className='landing-button'>
-                <Button variant="contained">I'm interested</Button>
+                <Button variant="contained">Get Started</Button>
               </Link>
             </div>
           </Box>
