@@ -24,12 +24,6 @@ export default function SaleEdit(props) {
   console.log(DateTime.fromISO(sold_date))
 
 
-  // useEffect(() => {
-  //   const i = dateformat(saleData?.sold_date)
-  //   console.log(i)
-  // }, [saleData?.sold_date])
-
-
 
   useEffect(() => {
     const fetchSaleItem = async () => {
@@ -74,44 +68,7 @@ export default function SaleEdit(props) {
     <div className='saleedit-form'>
 
 
-      {/* <div className='form'>
 
-          <div className='saleedit-form-left'>
-            <label>
-              Name:
-            </label>
-            <div id='saleedit-form-disp'>{saleData.product?.name}</div>
-
-            <label>
-              Cost:
-            </label>
-            <div id='saleedit-form-disp'>${saleData.product?.cost}</div>
-
-            <label>
-              Profit:
-            </label>
-            <div id='saleedit-form-disp'>${saleData.product?.profit}</div>
-            <label>
-              Buyer:
-            </label>
-            <input className='sale-edit-input' type='text' value={buyer} name='buyer' onChange={handleChange} />
-
-          </div>
-          <div className='saleedit-form-right'>
-            <label>
-              Description:
-            </label>
-            <div id='saleedit-form-disp-desc'>{saleData.product?.description}</div>
-            <img width='150' src={saleData.product?.img} alt={saleData.product?.name} />
-            <label>
-              Date:
-            </label>
-            <input className='sale-edit-input' type='text' value={sold_date} name='sold_date' onChange={handleChange} />
-
-
-          </div>
-
-        </div> */}
       <form onSubmit={handleSubmit} >
         <Grid>
           <Paper elevation={10} style={paperStyle}>
