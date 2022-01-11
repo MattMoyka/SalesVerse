@@ -75,7 +75,7 @@ export default function Signup(props) {
               variant="standard"
               fullWidth
               required
-              type='text'
+              type='password'
               name='password'
               value={password}
               onChange={handleChange} />

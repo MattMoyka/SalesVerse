@@ -1,5 +1,5 @@
 # SalesVerse <!-- omit in toc -->
-
+# [Click to view deployed site](https://salesverse.netlify.app/)
 
 - [Overview](#overview)
 - [MVP](#mvp)
@@ -14,7 +14,7 @@
     - [ERD Model](#erd-model)
 - [Post-MVP](#post-mvp)
 - [Code Showcase](#code-showcase)
-- [Code Issues & Resolutions](#code-issues--resolutions)
+
 
 <br>
 
@@ -52,8 +52,7 @@ _The **SalesVerse** MVP will consist of a react frond end and rails backend. The
 |   React Router   | Create routing in the app.|
 | Material UI | Elegant Styling. |
 |     Ruby on Rails     | Backend framework.|
-|  Three.js  | 3d background|
-| D3 | Data Visualization |
+
 
 <br>
 
@@ -62,16 +61,21 @@ _The **SalesVerse** MVP will consist of a react frond end and rails backend. The
 #### Wireframes
 
 
-- Desktop Home Page
-![Home Page](ReadMeAssets/home.png "home")
+- Desktop Sign Up
+![Home Page](ReadMeAssets/Signup.png "home")
 
 - Desktop Product List
 
-![products](ReadMeAssets/details.png "details")
+![products](ReadMeAssets/Productlist.png "details")
 
-- Resource Index
+- Product Details
 
-![details](ReadMeAssets/Product.png "product details")
+![details](ReadMeAssets/Productdetail.png "product details")
+
+- Product Edit Page
+
+![details](ReadMeAssets/editprod.png "product details")
+
 
 
 [Full Wireframe here](https://www.figma.com/file/eywNmVbpBVpSdbPavkAIx8/SalesVerse?node-id=0%3A1)
@@ -153,8 +157,26 @@ src
 ***
 
 ## Code Showcase
+  ```
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  })
+
+  const { username, email, password } = formData
+  const { handleSignup } = props
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  ```
 
 
-## Code Issues & Resolutions
+
 
 
